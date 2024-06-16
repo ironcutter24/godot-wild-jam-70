@@ -1,0 +1,86 @@
+[gd_scene load_steps=13 format=3 uid="uid://ofwi350llt14"]
+
+[ext_resource type="Script" path="res://scripts/PlayerController.gd" id="1_2x7yx"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_f5871"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="1_nqkk1"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="2_0ronv"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="3_oulok"]
+
+[sub_resource type="Environment" id="Environment_nyeiy"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3v74l"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_8dvk1"]
+
+[sub_resource type="Resource" id="Resource_3ruah"]
+script = ExtResource("2_0ronv")
+duration = 1.0
+transition = 0
+ease = 2
+
+[sub_resource type="Resource" id="Resource_pqnd8"]
+script = ExtResource("3_oulok")
+cull_mask = 1048575
+h_offset = 0.0
+v_offset = 0.0
+projection = 0
+fov = 75.0
+size = 1.0
+frustum_offset = Vector2(0, 0)
+near = 0.05
+far = 4000.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6ur3d"]
+size = Vector3(2, 0.4, 2)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fn5ea"]
+
+[node name="MainScene" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_nyeiy")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 10, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.799967, 0.599975, 0, -0.599975, 0.799967, 0, 7.68722, 8)
+
+[node name="PhantomCameraHost" type="Node" parent="Camera3D"]
+script = ExtResource("1_f5871")
+
+[node name="PlayerCharacter" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.68722, 0)
+script = ExtResource("1_2x7yx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerCharacter"]
+shape = SubResource("CapsuleShape3D_3v74l")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlayerCharacter"]
+gi_mode = 2
+mesh = SubResource("CapsuleMesh_8dvk1")
+
+[node name="PhantomCamera3D" type="Node3D" parent="PlayerCharacter" node_paths=PackedStringArray("follow_target", "look_at_target")]
+transform = Transform3D(1, 0, 0, 0, 0.799967, 0.599975, 0, -0.599975, 0.799967, 0, 6, 8)
+script = ExtResource("1_nqkk1")
+follow_mode = 2
+follow_target = NodePath("..")
+look_at_target = NodePath("..")
+tween_resource = SubResource("Resource_3ruah")
+camera_3d_resource = SubResource("Resource_pqnd8")
+follow_offset = Vector3(0, 6, 8)
+follow_damping = true
+dead_zone_width = 0.127
+dead_zone_height = 0.205
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, -0.2, 0)
+shape = SubResource("BoxShape3D_6ur3d")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+mesh = SubResource("PlaneMesh_fn5ea")
+skeleton = NodePath("../../..")
