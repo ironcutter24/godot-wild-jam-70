@@ -12,10 +12,6 @@ var index = 0
 @export var playerCharacters : Array[CharacterBody3D]
 
 
-func _init():
-	pass
-
-
 func _process(_delta):
 	if OS.has_feature("editor"):
 		if Input.is_action_just_pressed("debug_spawn_character"):
