@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://ofwi350llt14"]
+
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_f5871"]
+[ext_resource type="PackedScene" uid="uid://ba8v05vt5xmx6" path="res://scenes/player_character.tscn" id="2_ao5yt"]
+[ext_resource type="PackedScene" uid="uid://8ykhd66yj18x" path="res://scenes/grid_map_test.tscn" id="3_obvno"]
+
+[sub_resource type="Environment" id="Environment_nyeiy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6ur3d"]
+size = Vector3(2, 0.4, 2)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fn5ea"]
+
+[node name="MainScene" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_nyeiy")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 10, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.707107, -0.348141, 0.615431, -1.49012e-08, 0.870352, 0.492345, -0.707107, -0.348141, 0.615431, 12.0346, 14.2425, 10)
+
+[node name="PhantomCameraHost" type="Node" parent="Camera3D"]
+script = ExtResource("1_f5871")
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("2_ao5yt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.03458, 6.24252, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, -0.2, 0)
+shape = SubResource("BoxShape3D_6ur3d")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+mesh = SubResource("PlaneMesh_fn5ea")
+skeleton = NodePath("../../..")
+
+[node name="GridMapTest" parent="." instance=ExtResource("3_obvno")]
