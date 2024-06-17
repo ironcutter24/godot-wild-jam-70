@@ -52,7 +52,6 @@ script = ExtResource("1_f5871")
 
 [node name="PlayerController" type="Node3D" parent="." node_paths=PackedStringArray("player")]
 script = ExtResource("7_mxebo")
-player_scene = ExtResource("2_ao5yt")
 player = NodePath("../PlayerCharacter")
 
 [node name="PlayerCam" type="Node3D" parent="PlayerController" node_paths=PackedStringArray("follow_target", "look_at_target")]
@@ -72,7 +71,10 @@ dead_zone_height = 0.205
 [node name="CamTarget" type="Node3D" parent="PlayerController"]
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("2_ao5yt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.59426, 5.58555, -8.28836)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.03458, 5.58555, 0)
+
+[node name="PlayerCharacter2" parent="." instance=ExtResource("2_ao5yt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2391, 2.01248, -0.043684)
 
 [node name="Ground" type="StaticBody3D" parent="."]
 
@@ -86,4 +88,3 @@ mesh = SubResource("PlaneMesh_fn5ea")
 skeleton = NodePath("../../..")
 
 [node name="GridMapTest" parent="." instance=ExtResource("3_obvno")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.22579, 0, -8.16461)
