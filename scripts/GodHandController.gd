@@ -4,7 +4,7 @@ extends Node3D
 const RAY_LENGTH = 100.0;
 
 
-func _unhandled_input(event):
+func _unhandled_input(event) -> void:
 	var mouse_left = event.is_action_pressed("mouse_left")
 	var mouse_right = event.is_action_pressed("mouse_right")
 	
@@ -12,13 +12,13 @@ func _unhandled_input(event):
 		var hit = cast_ray_from_mouse_pointer()
 		
 		if hit != null:
-			var node = hit["collider"]
+			var node = hit["collider"].owner
 			if node is MouseInteractive:
 				if mouse_left: node.interact_left()
 				if mouse_right : node.interact_right()
 
 
-func cast_ray_from_mouse_pointer(mask = 1):
+func cast_ray_from_mouse_pointer(mask = 1) -> Dictionary:
 	var mouse_pos = get_viewport().get_mouse_position();
 	var cam = get_viewport().get_camera_3d();
 	

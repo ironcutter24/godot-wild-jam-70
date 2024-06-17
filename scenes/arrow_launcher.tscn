@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bi0g6ucd6o5lq"]
+
+[ext_resource type="Script" path="res://scripts/ArrowLauncher.gd" id="1_wwwwh"]
+[ext_resource type="PackedScene" uid="uid://x6p17kdqtgye" path="res://scenes/arrow_projectile.tscn" id="2_4517v"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ernwp"]
+size = Vector3(1, 1.5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xx2g5"]
+size = Vector3(1, 1.5, 0.5)
+
+[node name="ArrowLauncher" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.714, 2.101, -9.89545)
+script = ExtResource("1_wwwwh")
+arrow_scene = ExtResource("2_4517v")
+
+[node name="SpawnPoint" type="Node3D" parent="."]
+transform = Transform3D(0.999997, 0, 0, 0, 0.999999, 0, 0, 0, 0.999998, 0, 1.04425, 0.235765)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+mesh = SubResource("BoxMesh_ernwp")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.517586, 0, 0, 0, 0.313449, 0, 0, 0, 0.484338, 0, 0.294253, 0.235765)
+mesh = SubResource("BoxMesh_ernwp")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_xx2g5")

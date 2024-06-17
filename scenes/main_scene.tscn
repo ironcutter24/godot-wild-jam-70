@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ofwi350llt14"]
+[gd_scene load_steps=16 format=3 uid="uid://ofwi350llt14"]
 
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_f5871"]
 [ext_resource type="PackedScene" uid="uid://ba8v05vt5xmx6" path="res://scenes/player_character.tscn" id="2_ao5yt"]
@@ -8,7 +8,8 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="5_cvpjn"]
 [ext_resource type="Script" path="res://scripts/PlayerController.gd" id="7_mxebo"]
 [ext_resource type="Script" path="res://scripts/MouseInteractive.gd" id="7_yvg2j"]
-[ext_resource type="Script" path="res://scenes/GodHandController.gd" id="8_vw0p7"]
+[ext_resource type="Script" path="res://scripts/GodHandController.gd" id="8_vw0p7"]
+[ext_resource type="PackedScene" uid="uid://bi0g6ucd6o5lq" path="res://scenes/arrow_launcher.tscn" id="10_rrwge"]
 
 [sub_resource type="Environment" id="Environment_nyeiy"]
 
@@ -52,6 +53,9 @@ size = 22.0
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 script = ExtResource("1_f5871")
 
+[node name="GodHand" type="Node3D" parent="."]
+script = ExtResource("8_vw0p7")
+
 [node name="PlayerController" type="Node3D" parent="." node_paths=PackedStringArray("player")]
 script = ExtResource("7_mxebo")
 player_scene = ExtResource("2_ao5yt")
@@ -91,5 +95,4 @@ skeleton = NodePath("../../..")
 [node name="GridMapTest" parent="." instance=ExtResource("3_obvno")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.22579, 0, -8.16461)
 
-[node name="Node3D" type="Node3D" parent="."]
-script = ExtResource("8_vw0p7")
+[node name="ArrowLauncher" parent="." instance=ExtResource("10_rrwge")]
