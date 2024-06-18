@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cy4uflvq4buiw"
-path="res://.godot/imported/StoneBlock.glb-aba8bbe9a973308cc973b1c281a4e855.scn"
+uid="uid://b3g1s8kk5evdu"
+path="res://.godot/imported/packed_meshes.glb-c61702de958ab9249d107df7fc3008d5.scn"
 
 [deps]
 
-source_file="res://graphics/models/StoneBlock.glb"
-dest_files=["res://.godot/imported/StoneBlock.glb-aba8bbe9a973308cc973b1c281a4e855.scn"]
+source_file="res://graphics/models/packed_meshes.glb"
+dest_files=["res://.godot/imported/packed_meshes.glb-c61702de958ab9249d107df7fc3008d5.scn"]
 
 [params]
 

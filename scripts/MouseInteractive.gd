@@ -2,11 +2,8 @@ class_name MouseInteractive
 extends Node3D
 
 
-@export var mesh_instance : MeshInstance3D
+@onready var mesh_instance : MeshInstance3D = $MeshInstance3D
 
-
-#func _ready():
-	#mouse_enter()
 
 func mouse_enter() -> void:
 	mesh_instance.material_overlay = Global.outline_mat
