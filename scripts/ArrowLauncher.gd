@@ -7,6 +7,7 @@ const LAUNCH_FORCE = 20.0
 
 @export var arrow_scene : PackedScene
 
+
 func interact_left() -> void:
 	super.interact_left()
 	shoot()

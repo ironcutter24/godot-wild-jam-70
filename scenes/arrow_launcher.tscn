@@ -9,10 +9,11 @@ size = Vector3(1, 1.5, 0.5)
 [sub_resource type="BoxShape3D" id="BoxShape3D_xx2g5"]
 size = Vector3(1, 1.5, 0.5)
 
-[node name="ArrowLauncher" type="Node3D"]
+[node name="ArrowLauncher" type="Node3D" node_paths=PackedStringArray("mesh_instance")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.714, 2.101, -9.89545)
 script = ExtResource("1_wwwwh")
 arrow_scene = ExtResource("2_4517v")
+mesh_instance = NodePath("MeshInstance3D")
 
 [node name="SpawnPoint" type="Node3D" parent="."]
 transform = Transform3D(0.999997, 0, 0, 0, 0.999999, 0, 0, 0, 0.999998, 0, 1.04425, 0.235765)

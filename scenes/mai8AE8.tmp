@@ -1,0 +1,113 @@
+[gd_scene load_steps=18 format=3 uid="uid://ofwi350llt14"]
+
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_f5871"]
+[ext_resource type="PackedScene" uid="uid://ba8v05vt5xmx6" path="res://scenes/player_character.tscn" id="2_ao5yt"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="3_clron"]
+[ext_resource type="PackedScene" uid="uid://8ykhd66yj18x" path="res://scenes/grid_map_test.tscn" id="3_obvno"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_ijpkd"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="5_cvpjn"]
+[ext_resource type="Script" path="res://scripts/PlayerController.gd" id="7_mxebo"]
+[ext_resource type="Script" path="res://scripts/MouseInteractive.gd" id="7_yvg2j"]
+[ext_resource type="Script" path="res://scripts/GodHandController.gd" id="8_vw0p7"]
+[ext_resource type="PackedScene" uid="uid://bi0g6ucd6o5lq" path="res://scenes/arrow_launcher.tscn" id="10_rrwge"]
+
+[sub_resource type="Environment" id="Environment_nyeiy"]
+
+[sub_resource type="Resource" id="Resource_8neqv"]
+script = ExtResource("4_ijpkd")
+duration = 1.0
+transition = 1
+ease = 2
+
+[sub_resource type="Resource" id="Resource_mi44n"]
+script = ExtResource("5_cvpjn")
+cull_mask = 1048575
+h_offset = 0.0
+v_offset = 0.0
+projection = 1
+fov = 75.0
+size = 22.0
+frustum_offset = Vector2(0, 0)
+near = 0.05
+far = 4000.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fn5ea"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6ur3d"]
+size = Vector3(2, 0.4, 2)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6v3tl"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_relhu"]
+
+[node name="MainScene" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_nyeiy")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.46359, -0.785872, 0.409256, 9.45543e-09, 0.461888, 0.886938, -0.88605, -0.411176, 0.214127, 0, 10, 0)
+light_energy = 5.0
+light_bake_mode = 1
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.707107, -0.348141, 0.615431, -1.49012e-08, 0.870352, 0.492345, -0.707107, -0.348141, 0.615431, 20, 16, 20)
+projection = 1
+size = 22.0
+
+[node name="PhantomCameraHost" type="Node" parent="Camera3D"]
+script = ExtResource("1_f5871")
+
+[node name="GodHand" type="Node3D" parent="."]
+script = ExtResource("8_vw0p7")
+
+[node name="PlayerController" type="Node3D" parent="." node_paths=PackedStringArray("player")]
+script = ExtResource("7_mxebo")
+player_scene = ExtResource("2_ao5yt")
+player = NodePath("../PlayerCharacter")
+
+[node name="PlayerCam" type="Node3D" parent="PlayerController" node_paths=PackedStringArray("follow_target", "look_at_target")]
+transform = Transform3D(0.707107, -0.348141, 0.615431, -1.49012e-08, 0.870352, 0.492345, -0.707107, -0.348141, 0.615431, 20, 16, 20)
+script = ExtResource("3_clron")
+follow_mode = 2
+follow_target = NodePath("../CamTarget")
+look_at_target = NodePath("../../PlayerCharacter")
+tween_resource = SubResource("Resource_8neqv")
+tween_on_load = false
+camera_3d_resource = SubResource("Resource_mi44n")
+follow_offset = Vector3(20, 16, 20)
+follow_damping = true
+dead_zone_width = 0.127
+dead_zone_height = 0.205
+
+[node name="CamTarget" type="Node3D" parent="PlayerController"]
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("2_ao5yt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.59426, 5.58555, -8.28836)
+
+[node name="Ground" type="StaticBody3D" parent="."]
+script = ExtResource("7_yvg2j")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
+mesh = SubResource("PlaneMesh_fn5ea")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, -0.2, 0)
+shape = SubResource("BoxShape3D_6ur3d")
+
+[node name="GridMapTest" parent="." instance=ExtResource("3_obvno")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.22579, 0, -8.16461)
+
+[node name="ArrowLauncher" parent="." instance=ExtResource("10_rrwge")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.42841, 3.42282, -6.28806)
+script = ExtResource("7_yvg2j")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("CapsuleShape3D_6v3tl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("CapsuleMesh_relhu")

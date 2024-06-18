@@ -3,19 +3,35 @@ extends Node3D
 
 const RAY_LENGTH = 100.0;
 
+var hovered_interactive : MouseInteractive = null
+
 
 func _unhandled_input(event) -> void:
 	var mouse_left = event.is_action_pressed("mouse_left")
 	var mouse_right = event.is_action_pressed("mouse_right")
 	
-	if mouse_left or mouse_right:
-		var hit = cast_ray_from_mouse_pointer()
+	var hit = cast_ray_from_mouse_pointer()
+	
+	if hit:
+		var node
+		var collider = hit["collider"]
+		if collider is MouseInteractive:
+			node = collider
+		elif collider.owner is MouseInteractive:
+			node = collider.owner
 		
-		if hit != null:
-			var node = hit["collider"].owner
-			if node is MouseInteractive:
-				if mouse_left: node.interact_left()
-				if mouse_right : node.interact_right()
+		if node:
+			if node != hovered_interactive:
+				hovered_interactive = node
+				hovered_interactive.mouse_enter()
+			
+			if mouse_left: node.interact_left()
+			if mouse_right : node.interact_right()
+			return
+	
+	if hovered_interactive:
+		hovered_interactive.mouse_exit()
+		hovered_interactive = null
 
 
 func cast_ray_from_mouse_pointer(mask = 1) -> Dictionary:

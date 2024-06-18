@@ -1,6 +1,8 @@
 extends RigidBody3D
 
 
+const destroy_timer = 8.0
+
 var is_enabled = true
 
 
@@ -16,3 +18,7 @@ func _on_body_entered(body):
 		
 		is_enabled = false
 		call_deferred("set_contact_monitor", false)
+		
+		await get_tree().create_timer(destroy_timer).timeout
+		
+		queue_free()
