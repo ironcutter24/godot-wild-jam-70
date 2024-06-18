@@ -13,7 +13,9 @@ config_version=5
 config/name="Godot-wild-jam-70"
 run/main_scene="res://scenes/main_scene.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
+boot_splash/image="res://graphics/sprites/70-Logo-All-Cards.png"
 config/icon="res://icon.svg"
+boot_splash/minimum_display_time=4800
 
 [autoload]
 
