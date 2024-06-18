@@ -44,6 +44,7 @@ environment = SubResource("Environment_nyeiy")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.46359, -0.785872, 0.409256, 9.45543e-09, 0.461888, 0.886938, -0.88605, -0.411176, 0.214127, 0, 10, 0)
 light_energy = 5.0
+light_bake_mode = 1
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.707107, -0.348141, 0.615431, -1.49012e-08, 0.870352, 0.492345, -0.707107, -0.348141, 0.615431, 20, 16, 20)

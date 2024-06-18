@@ -14,9 +14,20 @@ const SPEED_LIMIT = 60.0
 var move_input : Vector3 = Vector3.ZERO
 var jump_input : bool = false
 
+@onready var swear_vignette = $SwearVignette
+
+func _ready():
+	swear_vignette.scale = Vector3.ZERO
+
 
 func death() -> void:
 	print("Death!")
+	
+	var tween = get_tree().create_tween().bind_node(self).set_trans(Tween.TRANS_ELASTIC)
+	tween.tween_property(swear_vignette, "scale", Vector3.ONE, 1.0)
+	#tween.tween_callback(transform_player)
+	tween.tween_interval(0.2)
+	tween.tween_property(swear_vignette, "scale", Vector3.ZERO, 1.0)
 
 
 func move(dir : Vector3) -> void:
