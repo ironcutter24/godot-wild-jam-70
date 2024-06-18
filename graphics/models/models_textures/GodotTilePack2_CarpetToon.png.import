@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cd26xjwagqbs0"
-path.s3tc="res://.godot/imported/GodotBlock_StoneToon1.jpg-82f0f15ebe5237dcfb0f3af5917670d3.s3tc.ctex"
+uid="uid://bh87tiwd8f0ak"
+path.s3tc="res://.godot/imported/GodotTilePack2_CarpetToon.png-916986c6049b67ef4ecd2c6d6637dd13.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "acea63f34ef04c7e78dbcdff5375a7f7"
+"md5": "0052f14aea167ced1fae2f17b4f7e040"
 }
 
 [deps]
 
-source_file="res://graphics/blocks/GodotBlock_StoneToon1.jpg"
-dest_files=["res://.godot/imported/GodotBlock_StoneToon1.jpg-82f0f15ebe5237dcfb0f3af5917670d3.s3tc.ctex"]
+source_file="res://graphics/models/models_textures/GodotTilePack2_CarpetToon.png"
+dest_files=["res://.godot/imported/GodotTilePack2_CarpetToon.png-916986c6049b67ef4ecd2c6d6637dd13.s3tc.ctex"]
 
 [params]
 
