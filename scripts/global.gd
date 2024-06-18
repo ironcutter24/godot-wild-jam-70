@@ -4,7 +4,7 @@ extends Node
 @export var outline_mat : Material
 
 @export_group("Scene Management")
-@export var menu_scene_path : String
+@export var splash_scene_path : String
 @export var game_scene_path : String
 
 
@@ -12,8 +12,8 @@ func _input(event : InputEvent):
 	if event.is_action_pressed("quit_game"):
 		get_tree().quit()
 
-func load_menu_scene():
-	load_scene(menu_scene_path)
+func load_splash_scene():
+	load_scene(splash_scene_path)
 
 func load_game_scene():
 	load_scene(game_scene_path)

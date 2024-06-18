@@ -1,21 +1,21 @@
 [gd_scene load_steps=16 format=3 uid="uid://ofwi350llt14"]
 
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_f5871"]
-[ext_resource type="PackedScene" uid="uid://ba8v05vt5xmx6" path="res://scenes/player_character.tscn" id="2_ao5yt"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="3_clron"]
-[ext_resource type="PackedScene" uid="uid://8ykhd66yj18x" path="res://scenes/grid_map_test.tscn" id="3_obvno"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_ijpkd"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="5_cvpjn"]
-[ext_resource type="Script" path="res://scripts/PlayerController.gd" id="7_mxebo"]
-[ext_resource type="Script" path="res://scripts/GodHandController.gd" id="8_vw0p7"]
-[ext_resource type="PackedScene" uid="uid://bi0g6ucd6o5lq" path="res://scenes/arrow_launcher.tscn" id="10_rrwge"]
-[ext_resource type="Shader" path="res://graphics/shaders/stylized_water.gdshader" id="10_s5msa"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_tf6f0"]
+[ext_resource type="Shader" path="res://graphics/shaders/stylized_water.gdshader" id="2_ll0h7"]
+[ext_resource type="Script" path="res://scripts/PlayerController.gd" id="3_xar83"]
+[ext_resource type="PackedScene" uid="uid://ba8v05vt5xmx6" path="res://scenes/player_character.tscn" id="4_gtk5i"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="5_w1j5v"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="6_2uall"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="7_uuk8v"]
+[ext_resource type="Script" path="res://scripts/GodHandController.gd" id="8_jplk2"]
+[ext_resource type="PackedScene" uid="uid://8ykhd66yj18x" path="res://scenes/grid_map_test.tscn" id="9_qy5qr"]
+[ext_resource type="PackedScene" uid="uid://bi0g6ucd6o5lq" path="res://scenes/arrow_launcher.tscn" id="10_31gp1"]
 
 [sub_resource type="Environment" id="Environment_nyeiy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7ogrn"]
 render_priority = 0
-shader = ExtResource("10_s5msa")
+shader = ExtResource("2_ll0h7")
 shader_parameter/WATER_COL = Color(0.176471, 0.635294, 0.733333, 1)
 shader_parameter/WATER2_COL = Color(0.0588235, 0.529412, 0.635294, 1)
 shader_parameter/FOAM_COL = Color(0.556863, 0.988235, 1, 1)
@@ -30,13 +30,13 @@ material = SubResource("ShaderMaterial_7ogrn")
 size = Vector2(500, 500)
 
 [sub_resource type="Resource" id="Resource_8neqv"]
-script = ExtResource("4_ijpkd")
+script = ExtResource("6_2uall")
 duration = 1.0
 transition = 1
 ease = 2
 
 [sub_resource type="Resource" id="Resource_mi44n"]
-script = ExtResource("5_cvpjn")
+script = ExtResource("7_uuk8v")
 cull_mask = 1048575
 h_offset = 0.0
 v_offset = 0.0
@@ -68,7 +68,7 @@ projection = 1
 size = 32.0
 
 [node name="PhantomCameraHost" type="Node" parent="Environment/Camera3D"]
-script = ExtResource("1_f5871")
+script = ExtResource("1_tf6f0")
 
 [node name="WaterPlane" type="MeshInstance3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
@@ -78,13 +78,13 @@ skeleton = NodePath("../..")
 [node name="Systems" type="Node3D" parent="."]
 
 [node name="PlayerController" type="Node3D" parent="Systems" node_paths=PackedStringArray("player")]
-script = ExtResource("7_mxebo")
-player_scene = ExtResource("2_ao5yt")
+script = ExtResource("3_xar83")
+player_scene = ExtResource("4_gtk5i")
 player = NodePath("../../PlayerCharacter")
 
 [node name="PlayerCam" type="Node3D" parent="Systems/PlayerController" node_paths=PackedStringArray("follow_target", "look_at_target")]
 transform = Transform3D(0.813734, -0.39581, 0.42561, 1.49012e-08, 0.732248, 0.680976, -0.581238, -0.554134, 0.595854, 8, 14, 12)
-script = ExtResource("3_clron")
+script = ExtResource("5_w1j5v")
 follow_mode = 2
 follow_target = NodePath("../CamTarget")
 look_at_target = NodePath("../CamTarget")
@@ -99,12 +99,12 @@ dead_zone_height = 0.205
 [node name="CamTarget" type="Node3D" parent="Systems/PlayerController"]
 
 [node name="GodHand" type="Node3D" parent="Systems"]
-script = ExtResource("8_vw0p7")
+script = ExtResource("8_jplk2")
 
-[node name="PlayerCharacter" parent="." instance=ExtResource("2_ao5yt")]
+[node name="PlayerCharacter" parent="." instance=ExtResource("4_gtk5i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.93032, 1.55687, 7.04984)
 
-[node name="GridMapTest" parent="." instance=ExtResource("3_obvno")]
+[node name="GridMapTest" parent="." instance=ExtResource("9_qy5qr")]
 
-[node name="ArrowLauncher" parent="." instance=ExtResource("10_rrwge")]
+[node name="ArrowLauncher" parent="." instance=ExtResource("10_31gp1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4, -6)

@@ -6,3 +6,5 @@
 [node name="Global" type="Node"]
 script = ExtResource("1_6g2jx")
 outline_mat = ExtResource("2_7y8v6")
+splash_scene_path = "res://scenes/prod/splash_screen.tscn"
+game_scene_path = "res://scenes/prod/main_scene.tscn"
