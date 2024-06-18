@@ -76,13 +76,11 @@ shadow_mesh = SubResource("ArrayMesh_a3u8i")
 [sub_resource type="BoxShape3D" id="BoxShape3D_xx2g5"]
 size = Vector3(2, 2.5, 1)
 
-[node name="ArrowLauncher" type="Node3D"]
+[node name="ArrowLauncher" type="Node3D" node_paths=PackedStringArray("spawn_points")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.714, 2.101, -9.89545)
 script = ExtResource("1_wwwwh")
 arrow_scene = ExtResource("2_4517v")
-
-[node name="SpawnPoint" type="Node3D" parent="."]
-transform = Transform3D(0.999997, 0, 0, 0, 0.999999, 0, 0, 0, 0.999998, 0, 1.04425, 0.235765)
+spawn_points = [NodePath("SpawnPoints/P1"), NodePath("SpawnPoints/P2"), NodePath("SpawnPoints/P3"), NodePath("SpawnPoints/P4")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0, 0, 0)
@@ -95,3 +93,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 0.5)
 shape = SubResource("BoxShape3D_xx2g5")
+
+[node name="SpawnPoints" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.09357, 0.984506)
+
+[node name="P1" type="Node3D" parent="SpawnPoints"]
+transform = Transform3D(0.999997, 0, 0, 0, 0.999999, 0, 0, 0, 0.999998, -0.3, 0.3, 0)
+
+[node name="P2" type="Node3D" parent="SpawnPoints"]
+transform = Transform3D(0.999997, 0, 0, 0, 0.999999, 0, 0, 0, 0.999998, 0.3, 0.3, 0)
+
+[node name="P3" type="Node3D" parent="SpawnPoints"]
+transform = Transform3D(0.999997, 0, 0, 0, 0.999999, 0, 0, 0, 0.999998, -0.3, -0.3, 0)
+
+[node name="P4" type="Node3D" parent="SpawnPoints"]
+transform = Transform3D(0.999997, 0, 0, 0, 0.999999, 0, 0, 0, 0.999998, 0.3, -0.3, 0)
