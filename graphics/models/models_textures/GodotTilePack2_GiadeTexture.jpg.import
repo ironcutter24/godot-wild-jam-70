@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://do65ccl8vqrj7"
-path.s3tc="res://.godot/imported/GodotBlock_GrassToonText2.jpg-9df5bac55ec286a474b1ee73adcfb8bb.s3tc.ctex"
+uid="uid://bp612qms74imi"
+path.s3tc="res://.godot/imported/GodotTilePack2_GiadeTexture.jpg-a48132797b21f6205b9198ef4d36ecf9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "60cc96df213474f19d08a16965a18195"
+"md5": "d7edd34a6136dd5ea46e36fcedad9410"
 }
 
 [deps]
 
-source_file="res://graphics/blocks/GodotBlock_GrassToonText2.jpg"
-dest_files=["res://.godot/imported/GodotBlock_GrassToonText2.jpg-9df5bac55ec286a474b1ee73adcfb8bb.s3tc.ctex"]
+source_file="res://graphics/models/models_textures/GodotTilePack2_GiadeTexture.jpg"
+dest_files=["res://.godot/imported/GodotTilePack2_GiadeTexture.jpg-a48132797b21f6205b9198ef4d36ecf9.s3tc.ctex"]
 
 [params]
 
