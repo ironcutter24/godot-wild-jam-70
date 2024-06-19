@@ -36,7 +36,14 @@ func release_character(character : PlayerCharacter):
 		player = null
 
 
-func spawn_and_possess_character():
+func spawn_statue_at(point : Vector3):
+	var statue = statue_scene.instantiate()
+	add_child(statue)
+	statue.global_position = point
+
+
+func spawn_and_possess_character(delay : float = 0.0):
+	await get_tree().create_timer(delay).timeout
 	if spawn_point:
 		player = player_scene.instantiate()
 		add_child(player)

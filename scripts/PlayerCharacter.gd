@@ -35,8 +35,14 @@ func death() -> void:
 		var tween = get_tree().create_tween().bind_node(self).set_trans(Tween.TRANS_ELASTIC)
 		tween.tween_property(swear_vignette, "scale", Vector3.ONE, SWEAR_IN_DURATION)
 		tween.tween_interval(0.2)
+		tween.tween_callback(func(): turn_to_statue())
 		tween.tween_property(swear_vignette, "scale", Vector3.ZERO, SWEAR_OUT_DURATION)
-		tween.tween_callback(func(): spawn_and_control_character())
+
+
+func turn_to_statue():
+	get_parent().spawn_statue_at(global_position)
+	spawn_and_control_character(0.8)
+	queue_free()
 
 
 func drown() -> void:
@@ -48,8 +54,8 @@ func drown() -> void:
 		queue_free()
 
 
-func spawn_and_control_character():
-	get_parent().spawn_and_possess_character()
+func spawn_and_control_character(delay : float = 0.0):
+	get_parent().spawn_and_possess_character(delay)
 
 
 func move(dir : Vector3) -> void:
