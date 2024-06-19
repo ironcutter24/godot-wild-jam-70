@@ -1,12 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cnbkg0vx6gr74"]
+[gd_scene load_steps=5 format=3 uid="uid://cnbkg0vx6gr74"]
 
 [ext_resource type="Script" path="res://scripts/GroundSpikes.gd" id="1_xhyix"]
+[ext_resource type="ArrayMesh" uid="uid://ceg3xgiy8rhuj" path="res://graphics/models/meshes/SpikeTrap_Plate.tres" id="2_cd6vu"]
+[ext_resource type="ArrayMesh" uid="uid://cw8tko40dwm3d" path="res://graphics/models/meshes/SpikeTrap_Spikes.tres" id="3_es3rk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4fmwf"]
 size = Vector3(2, 0.4, 2)
-
-[sub_resource type="BoxMesh" id="BoxMesh_th1nr"]
-size = Vector3(2, 0.2, 2)
 
 [node name="GroundSpikes" type="Node3D"]
 script = ExtResource("1_xhyix")
@@ -19,9 +18,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
 shape = SubResource("BoxShape3D_4fmwf")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_th1nr")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.015, 0)
+mesh = ExtResource("2_cd6vu")
 skeleton = NodePath("../Area3D")
 
 [node name="Spikes" type="MeshInstance3D" parent="MeshInstance3D"]
+mesh = ExtResource("3_es3rk")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

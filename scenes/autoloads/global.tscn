@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://bteg0ts0yaqni"]
 
-[ext_resource type="Script" path="res://scripts/Global.gd" id="1_6g2jx"]
+[ext_resource type="Script" path="res://scripts/Global.gd" id="1_hkxrf"]
 [ext_resource type="Material" uid="uid://cu8so5orbasa6" path="res://graphics/materials/pixel_perfect_outline_mat.tres" id="2_7y8v6"]
 
 [node name="Global" type="Node"]
-script = ExtResource("1_6g2jx")
+script = ExtResource("1_hkxrf")
 outline_mat = ExtResource("2_7y8v6")
 splash_scene_path = "res://scenes/persistent/splash_screen.tscn"
 game_scene_path = "res://scenes/persistent/main_scene.tscn"
