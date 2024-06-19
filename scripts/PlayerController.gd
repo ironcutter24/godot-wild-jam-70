@@ -1,7 +1,7 @@
 extends Node3D
 
 
-var spawn_point : Node3D
+var spawn_point : Vector3
 
 @onready var player_cam : PhantomCamera3D = $PlayerCam
 @onready var cam_target : Node3D = $CamTarget
@@ -10,7 +10,7 @@ var spawn_point : Node3D
 @export var player : CharacterBody3D
 
 
-func set_spawn_point(point : Node3D):
+func set_spawn_point(point : Vector3) -> void:
 	spawn_point = point
 
 
@@ -19,7 +19,7 @@ func _process(_delta) -> void:
 		if Input.is_action_just_pressed("debug_spawn_character") and spawn_point:
 			player = player_scene.instantiate()
 			add_child(player)
-			player.global_position = spawn_point.global_position
+			player.global_position = spawn_point
 	
 	if player != null:
 		player.move(get_input_vector())

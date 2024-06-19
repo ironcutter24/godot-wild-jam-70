@@ -16,6 +16,7 @@ var jump_input : bool = false
 
 @onready var swear_vignette = $SwearVignette
 
+
 func _ready():
 	swear_vignette.scale = Vector3.ZERO
 
