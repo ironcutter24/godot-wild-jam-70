@@ -1,3 +1,4 @@
+class_name PlayerController
 extends Node3D
 
 
@@ -7,11 +8,9 @@ var spawn_point : Vector3
 @onready var cam_target : Node3D = $CamTarget
 
 @export var player_scene : PackedScene
+@export var statue_scene : PackedScene
+
 @export var player : CharacterBody3D
-
-
-func set_spawn_point(point : Vector3) -> void:
-	spawn_point = point
 
 
 func _process(_delta) -> void:
@@ -26,6 +25,15 @@ func _process(_delta) -> void:
 			player.jump()
 		
 		cam_target.global_position = player.global_position
+
+
+func set_spawn_point(point : Vector3) -> void:
+	spawn_point = point
+
+
+func release_character(character : PlayerCharacter):
+	if player == character:
+		player = null
 
 
 func spawn_and_possess_character():

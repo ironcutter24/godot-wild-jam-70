@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ofwi350llt14"]
+[gd_scene load_steps=18 format=3 uid="uid://ofwi350llt14"]
 
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_jf4sp"]
 [ext_resource type="PackedScene" uid="uid://chqil7du8yor2" path="res://scenes/water.tscn" id="2_drpes"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b8rruq6x2e3cv" path="res://scenes/checkpoint.tscn" id="11_lc883"]
 [ext_resource type="PackedScene" uid="uid://dm5ccvgw8fdot" path="res://scenes/traps/flame_thrower.tscn" id="12_k37cj"]
 [ext_resource type="PackedScene" uid="uid://cnbkg0vx6gr74" path="res://scenes/traps/ground_spikes.tscn" id="13_4se2k"]
+[ext_resource type="PackedScene" uid="uid://cvx8s6ovc561d" path="res://scenes/player_statue.tscn" id="14_33j50"]
 
 [sub_resource type="Environment" id="Environment_nyeiy"]
 
@@ -65,6 +66,7 @@ script = ExtResource("1_jf4sp")
 unique_name_in_owner = true
 script = ExtResource("3_iadoq")
 player_scene = ExtResource("4_ipt5w")
+statue_scene = ExtResource("14_33j50")
 player = NodePath("PlayerCharacter")
 
 [node name="PlayerCam" type="Node3D" parent="Systems/PlayerController" node_paths=PackedStringArray("follow_target", "look_at_target")]
@@ -94,14 +96,14 @@ script = ExtResource("8_dinsw")
 
 [node name="GridMapTest" parent="." instance=ExtResource("9_sryqs")]
 
-[node name="ArrowLauncher" parent="." instance=ExtResource("10_ucx4r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4, -6)
-
 [node name="Checkpoint" parent="." instance=ExtResource("11_lc883")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 14)
 
 [node name="Checkpoint2" parent="." instance=ExtResource("11_lc883")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 8)
+
+[node name="ArrowLauncher" parent="." instance=ExtResource("10_ucx4r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4, -6)
 
 [node name="FlameThrower" parent="." instance=ExtResource("12_k37cj")]
 

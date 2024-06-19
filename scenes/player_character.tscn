@@ -10,15 +10,16 @@
 [sub_resource type="BoxMesh" id="BoxMesh_y6wsg"]
 
 [node name="PlayerCharacter" type="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.68722, 0)
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_u526j")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_gswjn")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 layers = 2
 cast_shadow = 0
 gi_mode = 2
@@ -31,6 +32,7 @@ cast_shadow = 0
 mesh = SubResource("BoxMesh_y6wsg")
 
 [node name="SwearVignette" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Sprite3D" type="Sprite3D" parent="SwearVignette"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
@@ -38,7 +40,7 @@ billboard = 2
 texture = ExtResource("2_iav36")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 2.32702, 0)
+transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 3.32702, 0)
 light_energy = 40.0
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
