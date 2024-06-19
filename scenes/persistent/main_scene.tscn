@@ -1,7 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://ofwi350llt14"]
+[gd_scene load_steps=17 format=3 uid="uid://ofwi350llt14"]
 
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_jf4sp"]
-[ext_resource type="Shader" path="res://graphics/shaders/stylized_water.gdshader" id="2_rek72"]
+[ext_resource type="PackedScene" uid="uid://chqil7du8yor2" path="res://scenes/water.tscn" id="2_drpes"]
 [ext_resource type="Script" path="res://scripts/PlayerController.gd" id="3_iadoq"]
 [ext_resource type="PackedScene" uid="uid://ba8v05vt5xmx6" path="res://scenes/player_character.tscn" id="4_ipt5w"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="5_cbamn"]
@@ -15,22 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://cnbkg0vx6gr74" path="res://scenes/traps/ground_spikes.tscn" id="13_4se2k"]
 
 [sub_resource type="Environment" id="Environment_nyeiy"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ogrn"]
-render_priority = 0
-shader = ExtResource("2_rek72")
-shader_parameter/WATER_COL = Color(0.176471, 0.635294, 0.733333, 1)
-shader_parameter/WATER2_COL = Color(0.0588235, 0.529412, 0.635294, 1)
-shader_parameter/FOAM_COL = Color(0.556863, 0.988235, 1, 1)
-shader_parameter/distortion_speed = 2.0
-shader_parameter/tile = Vector2(400, 400)
-shader_parameter/height = 2.0
-shader_parameter/wave_size = Vector2(2, 2)
-shader_parameter/wave_speed = 1.5
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_c84dt"]
-material = SubResource("ShaderMaterial_7ogrn")
-size = Vector2(500, 500)
 
 [sub_resource type="Resource" id="Resource_8neqv"]
 script = ExtResource("6_5yx6t")
@@ -73,10 +57,7 @@ size = 32.0
 [node name="PhantomCameraHost" type="Node" parent="Environment/Camera3D"]
 script = ExtResource("1_jf4sp")
 
-[node name="WaterPlane" type="MeshInstance3D" parent="Environment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
-mesh = SubResource("PlaneMesh_c84dt")
-skeleton = NodePath("../..")
+[node name="Water" parent="Environment" instance=ExtResource("2_drpes")]
 
 [node name="Systems" type="Node3D" parent="."]
 
@@ -84,7 +65,7 @@ skeleton = NodePath("../..")
 unique_name_in_owner = true
 script = ExtResource("3_iadoq")
 player_scene = ExtResource("4_ipt5w")
-player = NodePath("../../PlayerCharacter")
+player = NodePath("PlayerCharacter")
 
 [node name="PlayerCam" type="Node3D" parent="Systems/PlayerController" node_paths=PackedStringArray("follow_target", "look_at_target")]
 transform = Transform3D(0.813734, -0.39581, 0.42561, 1.49012e-08, 0.732248, 0.680976, -0.581238, -0.554134, 0.595854, 8, 14, 12)
@@ -105,11 +86,11 @@ dead_zone_height = 0.205
 [node name="SpawnPoint" type="Node3D" parent="Systems/PlayerController"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71949, 1.5635, 10.7035)
 
+[node name="PlayerCharacter" parent="Systems/PlayerController" instance=ExtResource("4_ipt5w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 16)
+
 [node name="GodHand" type="Node3D" parent="Systems"]
 script = ExtResource("8_dinsw")
-
-[node name="PlayerCharacter" parent="." instance=ExtResource("4_ipt5w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 16)
 
 [node name="GridMapTest" parent="." instance=ExtResource("9_sryqs")]
 

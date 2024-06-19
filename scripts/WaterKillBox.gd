@@ -1,0 +1,10 @@
+extends Area3D
+
+
+func _ready():
+	pass
+
+
+func _on_body_entered(body):
+	if body is PlayerCharacter:
+		body.drown()

@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://chqil7du8yor2"]
+
+[ext_resource type="Script" path="res://scripts/WaterKillBox.gd" id="1_y80fq"]
+[ext_resource type="Shader" path="res://graphics/shaders/stylized_water.gdshader" id="2_gke4r"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_etswj"]
+size = Vector3(500, 20, 500)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ogrn"]
+render_priority = 0
+shader = ExtResource("2_gke4r")
+shader_parameter/WATER_COL = Color(0.176471, 0.635294, 0.733333, 1)
+shader_parameter/WATER2_COL = Color(0.0588235, 0.529412, 0.635294, 1)
+shader_parameter/FOAM_COL = Color(0.556863, 0.988235, 1, 1)
+shader_parameter/distortion_speed = 2.0
+shader_parameter/tile = Vector2(400, 400)
+shader_parameter/height = 2.0
+shader_parameter/wave_size = Vector2(2, 2)
+shader_parameter/wave_speed = 1.5
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_u2xe2"]
+material = SubResource("ShaderMaterial_7ogrn")
+size = Vector2(500, 500)
+
+[node name="Water" type="Area3D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_y80fq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -12, 0)
+shape = SubResource("BoxShape3D_etswj")
+
+[node name="WaterPlane" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("PlaneMesh_u2xe2")
+skeleton = NodePath("../..")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

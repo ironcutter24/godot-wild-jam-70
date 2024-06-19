@@ -13,6 +13,7 @@ const SPEED_LIMIT = 60.0
 
 var move_input : Vector3 = Vector3.ZERO
 var jump_input : bool = false
+var is_dead = false
 
 @onready var swear_vignette = $SwearVignette
 
@@ -22,13 +23,28 @@ func _ready():
 
 
 func death() -> void:
-	print("Death!")
-	
-	var tween = get_tree().create_tween().bind_node(self).set_trans(Tween.TRANS_ELASTIC)
-	tween.tween_property(swear_vignette, "scale", Vector3.ONE, 1.0)
-	#tween.tween_callback(transform_player)
-	tween.tween_interval(0.2)
-	tween.tween_property(swear_vignette, "scale", Vector3.ZERO, 1.0)
+	if not is_dead:
+		is_dead = true
+		print("Death!")
+		
+		var tween = get_tree().create_tween().bind_node(self).set_trans(Tween.TRANS_ELASTIC)
+		tween.tween_property(swear_vignette, "scale", Vector3.ONE, 1.0)
+		tween.tween_callback(func(): spawn_and_control_character())
+		tween.tween_interval(0.2)
+		tween.tween_property(swear_vignette, "scale", Vector3.ZERO, 1.0)
+
+
+func drown() -> void:
+	if not is_dead:
+		is_dead = true
+		print("Drowned!")
+		
+		spawn_and_control_character()
+		queue_free()
+
+
+func spawn_and_control_character():
+	get_parent().spawn_and_possess_character()
 
 
 func move(dir : Vector3) -> void:

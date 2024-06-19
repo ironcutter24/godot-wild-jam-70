@@ -16,10 +16,8 @@ func set_spawn_point(point : Vector3) -> void:
 
 func _process(_delta) -> void:
 	if OS.has_feature("editor"):
-		if Input.is_action_just_pressed("debug_spawn_character") and spawn_point:
-			player = player_scene.instantiate()
-			add_child(player)
-			player.global_position = spawn_point
+		if Input.is_action_just_pressed("debug_spawn_character"):
+			spawn_and_possess_character()
 	
 	if player != null:
 		player.move(get_input_vector())
@@ -28,6 +26,13 @@ func _process(_delta) -> void:
 			player.jump()
 		
 		cam_target.global_position = player.global_position
+
+
+func spawn_and_possess_character():
+	if spawn_point:
+		player = player_scene.instantiate()
+		add_child(player)
+		player.global_position = spawn_point
 
 
 func get_input_vector() -> Vector3:
