@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bwdtmvl8vc3nb"]
 
-[ext_resource type="Script" path="res://scenes/game_loader.gd" id="1_q2epv"]
+[ext_resource type="Script" path="res://scripts/GameLoader.gd" id="1_q2epv"]
 [ext_resource type="Texture2D" uid="uid://no3y3k70y0un" path="res://graphics/sprites/70-Logo-All-Cards.png" id="2_pmaye"]
 
 [node name="SplashScreen" type="Control"]

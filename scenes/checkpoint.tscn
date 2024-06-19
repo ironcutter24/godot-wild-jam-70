@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://b8rruq6x2e3cv"]
+
+[ext_resource type="Script" path="res://scripts/Checkpoint.gd" id="1_scg08"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_0vsm1"]
+size = Vector3(0.5, 2.5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h5gyg"]
+size = Vector3(0.5, 2.5, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ntb6t"]
+size = Vector3(4, 0.5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3mf0k"]
+size = Vector3(4, 0.5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yajrb"]
+size = Vector3(3, 2.5, 0.7)
+
+[node name="Checkpoint" type="Node3D" node_paths=PackedStringArray("point")]
+script = ExtResource("1_scg08")
+point = NodePath("SpawnPoint")
+
+[node name="SpawnPoint" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75, 1.273, 0)
+mesh = SubResource("BoxMesh_0vsm1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_h5gyg")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75, 1.273, 0)
+mesh = SubResource("BoxMesh_0vsm1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D/MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/MeshInstance3D2/StaticBody3D"]
+shape = SubResource("BoxShape3D_h5gyg")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.75, 0)
+mesh = SubResource("BoxMesh_ntb6t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D/MeshInstance3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/MeshInstance3D3/StaticBody3D"]
+shape = SubResource("BoxShape3D_3mf0k")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+shape = SubResource("BoxShape3D_yajrb")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

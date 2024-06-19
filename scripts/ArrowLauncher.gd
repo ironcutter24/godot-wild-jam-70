@@ -2,6 +2,9 @@ extends MouseInteractive
 
 
 const LAUNCH_FORCE = 20.0
+const COOLDOWN_DURATION = 0.5
+
+var is_cooldown = false
 
 @export var arrow_scene : PackedScene
 @export var spawn_points : Array[Node3D]
@@ -9,7 +12,12 @@ const LAUNCH_FORCE = 20.0
 
 func interact_left() -> void:
 	super.interact_left()
-	shoot()
+	
+	if not is_cooldown:
+		is_cooldown = true
+		shoot()
+		await get_tree().create_timer(COOLDOWN_DURATION).timeout
+		is_cooldown = false
 
 
 func shoot() -> void:

@@ -2,10 +2,10 @@
 
 [ext_resource type="ArrayMesh" uid="uid://bki7q3e5l88sd" path="res://graphics/models/meshes/BlockStoneTilted.tres" id="1_tr5v2"]
 [ext_resource type="ArrayMesh" uid="uid://d2vkliyq5gfxp" path="res://graphics/models/meshes/StairsStone.tres" id="2_dstrj"]
-[ext_resource type="PackedScene" uid="uid://dco7sxm7jbov7" path="res://scenes/tile_block_body.tscn" id="2_nal2s"]
+[ext_resource type="PackedScene" uid="uid://dco7sxm7jbov7" path="res://scenes/components/tile_block_body.tscn" id="2_nal2s"]
 [ext_resource type="ArrayMesh" uid="uid://bkuietibjfv4y" path="res://graphics/models/meshes/StairsStoneCarpet.tres" id="3_5b7xk"]
 [ext_resource type="ArrayMesh" uid="uid://1gfltq3yqnwj" path="res://graphics/models/meshes/BlockGrass.tres" id="4_4jbo4"]
-[ext_resource type="PackedScene" uid="uid://deybo5mf7ct7l" path="res://scenes/tile_stairs_body.tscn" id="4_ay473"]
+[ext_resource type="PackedScene" uid="uid://deybo5mf7ct7l" path="res://scenes/components/tile_stairs_body.tscn" id="4_ay473"]
 [ext_resource type="ArrayMesh" uid="uid://dvjsk2ow38qte" path="res://graphics/models/meshes/BlockStone.tres" id="5_lldm3"]
 
 [node name="MeshLibrarySource" type="Node3D"]

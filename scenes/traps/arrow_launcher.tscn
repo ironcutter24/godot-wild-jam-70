@@ -1,8 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://bi0g6ucd6o5lq"]
 
 [ext_resource type="Script" path="res://scripts/ArrowLauncher.gd" id="1_wwwwh"]
-[ext_resource type="PackedScene" uid="uid://x6p17kdqtgye" path="res://scenes/arrow_projectile.tscn" id="2_4517v"]
+[ext_resource type="PackedScene" uid="uid://x6p17kdqtgye" path="res://scenes/traps/arrow_projectile.tscn" id="2_4517v"]
 [ext_resource type="Texture2D" uid="uid://de3whohgl826" path="res://graphics/models/packed_meshes_StoneToon2.jpg" id="3_exbh6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xx2g5"]
+size = Vector3(2, 2.6, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a52js"]
 resource_name = "MetalGold"
@@ -73,38 +76,31 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_a3u8i")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_xx2g5"]
-size = Vector3(2, 2.5, 1)
-
-[node name="ArrowLauncher" type="Node3D" node_paths=PackedStringArray("spawn_points")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.714, 2.101, -9.89545)
+[node name="ArrowLauncher" type="StaticBody3D" node_paths=PackedStringArray("spawn_points")]
 script = ExtResource("1_wwwwh")
 arrow_scene = ExtResource("2_4517v")
-spawn_points = [NodePath("SpawnPoints/P1"), NodePath("SpawnPoints/P2"), NodePath("SpawnPoints/P3"), NodePath("SpawnPoints/P4")]
+spawn_points = [NodePath("MeshInstance3D/SpawnPoints/P1"), NodePath("MeshInstance3D/SpawnPoints/P2"), NodePath("MeshInstance3D/SpawnPoints/P3"), NodePath("MeshInstance3D/SpawnPoints/P4")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0.5)
+shape = SubResource("BoxShape3D_xx2g5")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0, 0, 0)
 mesh = SubResource("ArrayMesh_c8u8r")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+[node name="SpawnPoints" type="Node3D" parent="MeshInstance3D"]
+transform = Transform3D(1.19249e-08, 0, 1, 0, 1, 0, -1, 0, 1.19249e-08, 0.984506, 1.09357, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 0.5)
-shape = SubResource("BoxShape3D_xx2g5")
-
-[node name="SpawnPoints" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.09357, 0.984506)
-
-[node name="P1" type="Node3D" parent="SpawnPoints"]
+[node name="P1" type="Node3D" parent="MeshInstance3D/SpawnPoints"]
 transform = Transform3D(0.999997, 0, 0, 0, 0.999999, 0, 0, 0, 0.999998, -0.3, 0.3, 0)
 
-[node name="P2" type="Node3D" parent="SpawnPoints"]
+[node name="P2" type="Node3D" parent="MeshInstance3D/SpawnPoints"]
 transform = Transform3D(0.999997, 0, 0, 0, 0.999999, 0, 0, 0, 0.999998, 0.3, 0.3, 0)
 
-[node name="P3" type="Node3D" parent="SpawnPoints"]
+[node name="P3" type="Node3D" parent="MeshInstance3D/SpawnPoints"]
 transform = Transform3D(0.999997, 0, 0, 0, 0.999999, 0, 0, 0, 0.999998, -0.3, -0.3, 0)
 
-[node name="P4" type="Node3D" parent="SpawnPoints"]
+[node name="P4" type="Node3D" parent="MeshInstance3D/SpawnPoints"]
 transform = Transform3D(0.999997, 0, 0, 0, 0.999999, 0, 0, 0, 0.999998, 0.3, -0.3, 0)
