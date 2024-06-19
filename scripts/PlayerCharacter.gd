@@ -11,8 +11,9 @@ const GRAVITY_JUMP = 32.0
 const GRAVITY_FALL = 48.0
 const SPEED_LIMIT = 60.0
 
-const SWEAR_IN_DURATION = 0.8
+const SWEAR_IN_DURATION = 1.0
 const SWEAR_OUT_DURATION = 0.6
+const SPAWN_CHARACTER_DELAY = 0.4
 
 var move_input : Vector3 = Vector3.ZERO
 var jump_input : bool = false
@@ -34,14 +35,13 @@ func death() -> void:
 		
 		var tween = get_tree().create_tween().bind_node(self).set_trans(Tween.TRANS_ELASTIC)
 		tween.tween_property(swear_vignette, "scale", Vector3.ONE, SWEAR_IN_DURATION)
-		tween.tween_interval(0.2)
-		tween.tween_callback(func(): turn_to_statue())
 		tween.tween_property(swear_vignette, "scale", Vector3.ZERO, SWEAR_OUT_DURATION)
+		tween.tween_callback(func(): turn_to_statue())
 
 
 func turn_to_statue():
 	get_parent().spawn_statue_at(global_position)
-	spawn_and_control_character(0.8)
+	spawn_and_control_character(SPAWN_CHARACTER_DELAY)
 	queue_free()
 
 
