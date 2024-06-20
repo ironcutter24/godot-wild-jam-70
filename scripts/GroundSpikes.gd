@@ -22,7 +22,7 @@ func interact_left() -> void:
 		set_spikes(false)
 
 
-func set_spikes(state : bool) -> void:
+func set_spikes(state: bool) -> void:
 	if state: is_cooldown = true
 	spike_area.monitoring = state
 	

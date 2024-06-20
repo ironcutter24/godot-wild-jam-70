@@ -25,7 +25,7 @@ func shoot() -> void:
 		launch_dart(p)
 
 
-func launch_dart(point : Node3D) -> void:
+func launch_dart(point: Node3D) -> void:
 	var arrow : RigidBody3D = arrow_scene.instantiate()
 	add_child(arrow)
 	arrow.global_position = point.global_position

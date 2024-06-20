@@ -8,7 +8,7 @@ extends Node
 @export var game_scene_path : String
 
 
-func _input(event : InputEvent):
+func _input(event: InputEvent):
 	if event.is_action_pressed("quit_game"):
 		get_tree().quit()
 

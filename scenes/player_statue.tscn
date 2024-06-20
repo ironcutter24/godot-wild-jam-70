@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cvx8s6ovc561d"]
+[gd_scene load_steps=4 format=3 uid="uid://cvx8s6ovc561d"]
+
+[ext_resource type="PackedScene" uid="uid://coe7l6wi37as3" path="res://graphics/models/knight/StatuePose_03.glb" id="1_ndvll"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_vt5wm"]
 radius = 0.7
@@ -16,4 +18,7 @@ shape = SubResource("CylinderShape3D_vt5wm")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
 mesh = SubResource("CylinderMesh_2lpid")
+
+[node name="StatuePose_03" parent="." instance=ExtResource("1_ndvll")]

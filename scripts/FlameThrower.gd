@@ -20,7 +20,7 @@ func interact_left() -> void:
 		set_flame(false)
 
 
-func set_flame(state : bool) -> void:
+func set_flame(state: bool) -> void:
 	flame_particles.emitting = state
 	flame_area.monitoring = state
 

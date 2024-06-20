@@ -21,9 +21,12 @@ var is_dead = false
 
 @onready var swear_vignette = $SwearVignette
 
+@export var knight_color_mat : Material
+
 
 func _ready():
 	swear_vignette.scale = Vector3.ZERO
+	knight_color_mat.albedo_color = Color.from_hsv(randf_range(0, 1), 0.56, 1.0)
 
 
 func death() -> void:
@@ -40,7 +43,7 @@ func death() -> void:
 
 
 func turn_to_statue():
-	get_parent().spawn_statue_at(global_position)
+	get_parent().spawn_statue_at(global_position, global_rotation)
 	spawn_and_control_character(SPAWN_CHARACTER_DELAY)
 	queue_free()
 
@@ -54,11 +57,11 @@ func drown() -> void:
 		queue_free()
 
 
-func spawn_and_control_character(delay : float = 0.0):
+func spawn_and_control_character(delay: float = 0.0):
 	get_parent().spawn_and_possess_character(delay)
 
 
-func move(dir : Vector3) -> void:
+func move(dir: Vector3) -> void:
 	dir.y = 0.0
 	move_input = dir
 
@@ -100,7 +103,7 @@ func reset_inputs() -> void:
 	jump_input = false
 
 
-func get_gravity_scale(v_speed : float) -> float:
+func get_gravity_scale(v_speed: float) -> float:
 	if v_speed > 0.0:
 		return GRAVITY_JUMP
 	else:

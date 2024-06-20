@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dtvih5rw6b8rv"]
+
+[ext_resource type="Texture2D" uid="uid://bkrpwt855jh3w" path="res://graphics/models/knight/GodotKnight_01_Brushed-Metal-Texture.jpg" id="1_sua6o"]
+
+[resource]
+resource_name = "knight_color_mat"
+cull_mode = 2
+albedo_color = Color(1, 0, 0, 1)
+albedo_texture = ExtResource("1_sua6o")
+metallic = 0.4
+metallic_specular = 0.2
+roughness = 0.8

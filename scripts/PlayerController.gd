@@ -27,22 +27,23 @@ func _process(_delta) -> void:
 		cam_target.global_position = player.global_position
 
 
-func set_spawn_point(point : Vector3) -> void:
+func set_spawn_point(point: Vector3) -> void:
 	spawn_point = point
 
 
-func release_character(character : PlayerCharacter):
+func release_character(character: PlayerCharacter):
 	if player == character:
 		player = null
 
 
-func spawn_statue_at(point : Vector3):
+func spawn_statue_at(pos: Vector3, rot: Vector3):
 	var statue = statue_scene.instantiate()
 	add_child(statue)
-	statue.global_position = point
+	statue.global_position = pos
+	statue.global_rotation = rot
 
 
-func spawn_and_possess_character(delay : float = 0.0):
+func spawn_and_possess_character(delay: float = 0.0):
 	await get_tree().create_timer(delay).timeout
 	if spawn_point:
 		player = player_scene.instantiate()
@@ -57,6 +58,6 @@ func get_input_vector() -> Vector3:
 	return cam_basis_x * input_dir.x + cam_basis_z * input_dir.y
 
 
-func normalize_on_plane_xz(v : Vector3) -> Vector3:
+func normalize_on_plane_xz(v: Vector3) -> Vector3:
 	v.y = 0.0
 	return v.normalized()
