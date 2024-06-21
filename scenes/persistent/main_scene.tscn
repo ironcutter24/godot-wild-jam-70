@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ofwi350llt14"]
+[gd_scene load_steps=21 format=3 uid="uid://ofwi350llt14"]
 
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_jf4sp"]
 [ext_resource type="PackedScene" uid="uid://chqil7du8yor2" path="res://scenes/water.tscn" id="2_drpes"]
@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://cnbkg0vx6gr74" path="res://scenes/traps/ground_spikes.tscn" id="13_4se2k"]
 [ext_resource type="PackedScene" uid="uid://cvx8s6ovc561d" path="res://scenes/player_statue.tscn" id="14_33j50"]
 [ext_resource type="PackedScene" uid="uid://set3rufnpnae" path="res://scenes/tree_prop.tscn" id="15_r8w2d"]
+[ext_resource type="PackedScene" uid="uid://caaidcaxd2nfe" path="res://scenes/pressure_plate.tscn" id="16_wnl80"]
+[ext_resource type="PackedScene" uid="uid://4ywa83djv3v7" path="res://scenes/door.tscn" id="17_m37s7"]
 
 [sub_resource type="Environment" id="Environment_nyeiy"]
 
@@ -90,7 +92,7 @@ dead_zone_height = 0.205
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71949, 1.5635, 10.7035)
 
 [node name="PlayerCharacter" parent="Systems/PlayerController" instance=ExtResource("4_ipt5w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 16)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 16)
 
 [node name="GodHand" type="Node3D" parent="Systems"]
 script = ExtResource("8_dinsw")
@@ -117,3 +119,14 @@ transform = Transform3D(0.960245, 0, 0.279159, 0, 1, 0, -0.279159, 0, 0.960245, 
 
 [node name="TreeProp2" parent="." instance=ExtResource("15_r8w2d")]
 transform = Transform3D(0.560162, 0, 0.828383, 0, 1, 0, -0.828383, 0, 0.560162, 11, 0, 1)
+
+[node name="Door" parent="." node_paths=PackedStringArray("_pressure_plates") instance=ExtResource("17_m37s7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 5)
+_pressure_plates = [NodePath("../PressurePlate"), NodePath("../PressurePlate2")]
+_all_required = true
+
+[node name="PressurePlate" parent="." instance=ExtResource("16_wnl80")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 7)
+
+[node name="PressurePlate2" parent="." instance=ExtResource("16_wnl80")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 11)

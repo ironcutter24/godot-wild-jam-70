@@ -20,7 +20,7 @@ const SPAWN_CHARACTER_DELAY = 0.4
 
 var _move_input : Vector3 = Vector3.ZERO
 var _jump_input : bool = false
-var _is_dead = false
+var _is_dead : bool = false
 
 @onready var _player_anim : PlayerAnimation = $AnimationTree
 @onready var _swear_vignette : Node3D = $SwearVignette
@@ -34,6 +34,15 @@ func _ready():
 	_player_anim.set_move(false)
 
 
+func move(dir: Vector3) -> void:
+	dir.y = 0.0
+	_move_input = dir
+
+
+func jump() -> void:
+	_jump_input = true
+
+
 func death() -> void:
 	if not _is_dead:
 		_is_dead = true
@@ -44,41 +53,22 @@ func death() -> void:
 		var tween = get_tree().create_tween().bind_node(self).set_trans(Tween.TRANS_ELASTIC)
 		tween.tween_property(_swear_vignette, "scale", Vector3.ONE, SWEAR_IN_DURATION)
 		tween.tween_property(_swear_vignette, "scale", Vector3.ZERO, SWEAR_OUT_DURATION)
-		tween.tween_callback(func(): turn_to_statue())
+		tween.tween_callback(func(): _turn_to_statue())
 		
 		_player_anim.set_hurt_trigger()
-
-
-func turn_to_statue():
-	get_parent().spawn_statue_at(global_position, global_rotation)
-	spawn_and_control_character(SPAWN_CHARACTER_DELAY)
-	queue_free()
 
 
 func drown() -> void:
 	if not _is_dead:
 		_is_dead = true
-		spawn_and_control_character()
+		_spawn_and_control_character()
 		queue_free()
-
-
-func spawn_and_control_character(delay: float = 0.0):
-	get_parent().spawn_and_possess_character(delay)
-
-
-func move(dir: Vector3) -> void:
-	dir.y = 0.0
-	_move_input = dir
-
-
-func jump() -> void:
-	_jump_input = true
 
 
 func _physics_process(delta) -> void:
 	# Add the gravity.
 	if not is_on_floor():
-		velocity.y -= get_gravity_scale(velocity.y) * delta
+		velocity.y -= _get_gravity_scale(velocity.y) * delta
 	
 	# Handle jump.
 	if _jump_input and is_on_floor():
@@ -99,13 +89,23 @@ func _physics_process(delta) -> void:
 	_player_anim.set_jump(is_on_floor(), velocity.y)
 	
 	move_and_slide()
-	reset_inputs()
+	_reset_inputs()
 
 
-func reset_inputs() -> void:
+func _turn_to_statue() -> void:
+	get_parent().spawn_statue_at(global_position, global_rotation)
+	_spawn_and_control_character(SPAWN_CHARACTER_DELAY)
+	queue_free()
+
+
+func _spawn_and_control_character(delay: float = 0.0) -> void:
+	get_parent().spawn_and_possess_character(delay)
+
+
+func _get_gravity_scale(v_speed: float) -> float:
+	return GRAVITY_JUMP if v_speed > 0.0 else GRAVITY_FALL
+
+
+func _reset_inputs() -> void:
 	_move_input = Vector3.ZERO
 	_jump_input = false
-
-
-func get_gravity_scale(v_speed: float) -> float:
-	return GRAVITY_JUMP if v_speed > 0.0 else GRAVITY_FALL
