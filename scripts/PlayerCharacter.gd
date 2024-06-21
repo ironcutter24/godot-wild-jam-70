@@ -2,15 +2,24 @@ class_name PlayerCharacter
 extends CharacterBody3D
 
 
+# Movement
 const MOVE_SPEED = 10.0
 const LOOK_AT_LERP_SPEED = 0.16
 const PUSH_FORCE = 2.0
 
+# Jump
 const JUMP_VELOCITY = 12.0
 const GRAVITY_JUMP = 32.0
 const GRAVITY_FALL = 48.0
 const SPEED_LIMIT = 60.0
 
+# Animation parameters
+const ANIM_MOVING = "parameters/conditions/is_moving"
+const ANIM_NOT_MOVING = "parameters/conditions/is_not_moving"
+const ANIM_BORED = "parameters/conditions/is_bored"
+const ANIM_HURT = "parameters/conditions/is_hurt"
+
+# Mixed params
 const SWEAR_IN_DURATION = 1.0
 const SWEAR_OUT_DURATION = 0.6
 const SPAWN_CHARACTER_DELAY = 0.4
@@ -19,7 +28,8 @@ var move_input : Vector3 = Vector3.ZERO
 var jump_input : bool = false
 var is_dead = false
 
-@onready var swear_vignette = $SwearVignette
+@onready var anim_tree : AnimationTree = $AnimationTree
+@onready var swear_vignette : Node3D = $SwearVignette
 
 @export var knight_color_mat : Material
 
@@ -27,12 +37,12 @@ var is_dead = false
 func _ready():
 	swear_vignette.scale = Vector3.ZERO
 	knight_color_mat.albedo_color = Color.from_hsv(randf_range(0, 1), 0.56, 1.0)
+	set_anim_movement(false)
 
 
 func death() -> void:
 	if not is_dead:
 		is_dead = true
-		print("Death!")
 		
 		get_parent().release_character(self)
 		
@@ -40,6 +50,8 @@ func death() -> void:
 		tween.tween_property(swear_vignette, "scale", Vector3.ONE, SWEAR_IN_DURATION)
 		tween.tween_property(swear_vignette, "scale", Vector3.ZERO, SWEAR_OUT_DURATION)
 		tween.tween_callback(func(): turn_to_statue())
+		
+		trigger_anim_param(ANIM_HURT)
 
 
 func turn_to_statue():
@@ -85,8 +97,12 @@ func _physics_process(delta) -> void:
 	if move_input:
 		velocity = move_input.normalized() * MOVE_SPEED + Vector3.UP * velocity.y
 		global_rotation.y = lerp_angle(global_rotation.y, atan2(velocity.x, velocity.z), LOOK_AT_LERP_SPEED)
+		set_anim_movement(true)
+		$BoredTimer.start()
 	else:
 		velocity = velocity.move_toward(Vector3.UP * velocity.y, MOVE_SPEED)
+		set_anim_movement(false)
+	
 	
 	move_and_slide()
 	
@@ -96,6 +112,17 @@ func _physics_process(delta) -> void:
 			#c.get_collider().apply_central_impulse(-c.get_normal() * PUSH_FORCE * move_input.length())
 	
 	reset_inputs()
+
+
+func set_anim_movement(state: bool):
+	anim_tree.set("parameters/conditions/is_moving", state)
+	anim_tree.set("parameters/conditions/is_not_moving", not state)
+
+
+func trigger_anim_param(path: String):
+	anim_tree.set(path, true)
+	await get_tree().create_timer(0.1).timeout
+	anim_tree.set(path, false)
 
 
 func reset_inputs() -> void:
@@ -108,3 +135,7 @@ func get_gravity_scale(v_speed: float) -> float:
 		return GRAVITY_JUMP
 	else:
 		return GRAVITY_FALL
+
+
+func _on_bored_timer_timeout():
+	trigger_anim_param(ANIM_BORED)
