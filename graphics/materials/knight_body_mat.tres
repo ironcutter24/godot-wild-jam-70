@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cghnyih3qb5qp"]
+
+[ext_resource type="Texture2D" uid="uid://qbggeir053ds" path="res://graphics/models/knight/GodotKnight_01_MailTexture.jpg" id="1_cgoui"]
+
+[resource]
+resource_name = "knight_body_mat"
+cull_mode = 2
+albedo_texture = ExtResource("1_cgoui")
+metallic = 0.6
+metallic_specular = 0.0
+roughness = 0.5
