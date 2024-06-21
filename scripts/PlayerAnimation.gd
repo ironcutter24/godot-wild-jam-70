@@ -6,22 +6,27 @@ extends AnimationTree
 
 @export var _is_moving : bool = false
 @export var _is_bored_trigger : bool = false
-@export var _is_jump_trigger : bool = false
 @export var _is_hurt_trigger : bool = false
+
+@export var _is_in_air : bool = false
+@export var _is_falling : bool = false
 
 @export_group("Params")
 @export var _bored_start_delay : float = 4.0
 @export var _bored_loop_delay : float = 10.0
 
 
+func _ready():
+	active = true
+
+
 func set_move(state: bool):
 	_is_moving = state
 
 
-func set_jump_trigger():
-	_is_jump_trigger = true
-	await _trigger_deadzone_async()
-	_is_jump_trigger = false
+func set_jump(is_on_floor: bool, v_speed: float):
+	_is_in_air = not is_on_floor
+	_is_falling = v_speed < 0.0
 
 
 func set_hurt_trigger():

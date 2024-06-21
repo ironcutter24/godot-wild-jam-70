@@ -3,7 +3,7 @@ extends CharacterBody3D
 
 
 # Movement
-const MOVE_SPEED = 10.0
+const MOVE_SPEED = 8.5
 const LOOK_AT_LERP_SPEED = 0.16
 const PUSH_FORCE = 2.0
 
@@ -95,6 +95,8 @@ func _physics_process(delta) -> void:
 	else:
 		velocity = velocity.move_toward(Vector3.UP * velocity.y, MOVE_SPEED)
 		_player_anim.set_move(false)
+	
+	_player_anim.set_jump(is_on_floor(), velocity.y)
 	
 	move_and_slide()
 	reset_inputs()
