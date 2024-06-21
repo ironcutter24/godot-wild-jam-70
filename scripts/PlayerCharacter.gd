@@ -13,45 +13,40 @@ const GRAVITY_JUMP = 32.0
 const GRAVITY_FALL = 48.0
 const SPEED_LIMIT = 60.0
 
-# Animation parameters
-const ANIM_MOVING = "parameters/conditions/is_moving"
-const ANIM_NOT_MOVING = "parameters/conditions/is_not_moving"
-const ANIM_BORED = "parameters/conditions/is_bored"
-const ANIM_HURT = "parameters/conditions/is_hurt"
-
 # Mixed params
 const SWEAR_IN_DURATION = 1.0
 const SWEAR_OUT_DURATION = 0.6
 const SPAWN_CHARACTER_DELAY = 0.4
 
-var move_input : Vector3 = Vector3.ZERO
-var jump_input : bool = false
-var is_dead = false
+var _move_input : Vector3 = Vector3.ZERO
+var _jump_input : bool = false
+var _is_dead = false
 
-@onready var anim_tree : AnimationTree = $AnimationTree
-@onready var swear_vignette : Node3D = $SwearVignette
+@onready var _player_anim : PlayerAnimation = $AnimationTree
+@onready var _swear_vignette : Node3D = $SwearVignette
 
-@export var knight_color_mat : Material
+@export var _knight_color_mat : Material
 
 
 func _ready():
-	swear_vignette.scale = Vector3.ZERO
-	knight_color_mat.albedo_color = Color.from_hsv(randf_range(0, 1), 0.56, 1.0)
-	set_anim_movement(false)
+	_swear_vignette.scale = Vector3.ZERO
+	_knight_color_mat.albedo_color = Color.from_hsv(randf_range(0, 1), 0.56, 1.0)
+	_player_anim.set_move(false)
 
 
 func death() -> void:
-	if not is_dead:
-		is_dead = true
+	if not _is_dead:
+		_is_dead = true
 		
+		# Detach PlayerController
 		get_parent().release_character(self)
 		
 		var tween = get_tree().create_tween().bind_node(self).set_trans(Tween.TRANS_ELASTIC)
-		tween.tween_property(swear_vignette, "scale", Vector3.ONE, SWEAR_IN_DURATION)
-		tween.tween_property(swear_vignette, "scale", Vector3.ZERO, SWEAR_OUT_DURATION)
+		tween.tween_property(_swear_vignette, "scale", Vector3.ONE, SWEAR_IN_DURATION)
+		tween.tween_property(_swear_vignette, "scale", Vector3.ZERO, SWEAR_OUT_DURATION)
 		tween.tween_callback(func(): turn_to_statue())
 		
-		trigger_anim_param(ANIM_HURT)
+		_player_anim.set_hurt_trigger()
 
 
 func turn_to_statue():
@@ -61,10 +56,8 @@ func turn_to_statue():
 
 
 func drown() -> void:
-	if not is_dead:
-		is_dead = true
-		print("Drowned!")
-		
+	if not _is_dead:
+		_is_dead = true
 		spawn_and_control_character()
 		queue_free()
 
@@ -75,11 +68,11 @@ func spawn_and_control_character(delay: float = 0.0):
 
 func move(dir: Vector3) -> void:
 	dir.y = 0.0
-	move_input = dir
+	_move_input = dir
 
 
 func jump() -> void:
-	jump_input = true
+	_jump_input = true
 
 
 func _physics_process(delta) -> void:
@@ -88,54 +81,29 @@ func _physics_process(delta) -> void:
 		velocity.y -= get_gravity_scale(velocity.y) * delta
 	
 	# Handle jump.
-	if jump_input and is_on_floor():
+	if _jump_input and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 	
 	velocity.y = clamp(velocity.y, -SPEED_LIMIT, SPEED_LIMIT)
 	
 	# Handle movement.
-	if move_input:
-		velocity = move_input.normalized() * MOVE_SPEED + Vector3.UP * velocity.y
+	if _move_input:
+		velocity = _move_input.normalized() * MOVE_SPEED + Vector3.UP * velocity.y
 		global_rotation.y = lerp_angle(global_rotation.y, atan2(velocity.x, velocity.z), LOOK_AT_LERP_SPEED)
-		set_anim_movement(true)
-		$BoredTimer.start()
+		_player_anim.set_move(true)
+		_player_anim.reset_bored_timer()
 	else:
 		velocity = velocity.move_toward(Vector3.UP * velocity.y, MOVE_SPEED)
-		set_anim_movement(false)
-	
+		_player_anim.set_move(false)
 	
 	move_and_slide()
-	
-	#for i in get_slide_collision_count():
-		#var c = get_slide_collision(i)
-		#if c.get_collider() is RigidBody3D:
-			#c.get_collider().apply_central_impulse(-c.get_normal() * PUSH_FORCE * move_input.length())
-	
 	reset_inputs()
 
 
-func set_anim_movement(state: bool):
-	anim_tree.set("parameters/conditions/is_moving", state)
-	anim_tree.set("parameters/conditions/is_not_moving", not state)
-
-
-func trigger_anim_param(path: String):
-	anim_tree.set(path, true)
-	await get_tree().create_timer(0.1).timeout
-	anim_tree.set(path, false)
-
-
 func reset_inputs() -> void:
-	move_input = Vector3.ZERO
-	jump_input = false
+	_move_input = Vector3.ZERO
+	_jump_input = false
 
 
 func get_gravity_scale(v_speed: float) -> float:
-	if v_speed > 0.0:
-		return GRAVITY_JUMP
-	else:
-		return GRAVITY_FALL
-
-
-func _on_bored_timer_timeout():
-	trigger_anim_param(ANIM_BORED)
+	return GRAVITY_JUMP if v_speed > 0.0 else GRAVITY_FALL

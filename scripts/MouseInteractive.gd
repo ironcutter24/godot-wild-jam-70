@@ -6,7 +6,7 @@ extends Node3D
 
 
 func mouse_enter() -> void:
-	mesh_instance.material_overlay = Global.outline_mat
+	mesh_instance.material_overlay = Global.get_outline_mat()
 
 
 func mouse_exit() -> void:
