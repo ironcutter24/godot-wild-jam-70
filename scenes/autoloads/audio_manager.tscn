@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://cm8rp67s8a3s5"]
+
+[ext_resource type="Script" path="res://scripts/autoloads/AudioManager.gd" id="1_jlxl5"]
+[ext_resource type="AudioStream" uid="uid://cgc3bl21a7bj8" path="res://audio/censor-beep-3.wav" id="2_eh2iu"]
+[ext_resource type="AudioStream" uid="uid://c2ahg23s8hmf1" path="res://audio/arrow_hit/Arrow Impact Armor 1.wav" id="3_32jwy"]
+[ext_resource type="AudioStream" uid="uid://jbifp8jxyd12" path="res://audio/arrow_hit/Arrow Impact Armor 2.wav" id="4_rjj7q"]
+[ext_resource type="AudioStream" uid="uid://34xaqkomhbix" path="res://audio/arrow_hit/Arrow Impact Armor 3.wav" id="5_ehn01"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_a1emo"]
+random_pitch = 1.2
+random_volume_offset_db = 0.2
+streams_count = 3
+stream_0/stream = ExtResource("3_32jwy")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("4_rjj7q")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("5_ehn01")
+stream_2/weight = 1.0
+
+[node name="AudioManager" type="Node" node_paths=PackedStringArray("_stream_players")]
+script = ExtResource("1_jlxl5")
+_stream_players = [NodePath("AudioStreamPlayer"), NodePath("AudioStreamPlayer2"), NodePath("AudioStreamPlayer3"), NodePath("AudioStreamPlayer4"), NodePath("AudioStreamPlayer5")]
+_beep_sound = ExtResource("2_eh2iu")
+_arrow_hit_sound = SubResource("AudioStreamRandomizer_a1emo")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="."]
+
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="."]

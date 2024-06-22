@@ -16,6 +16,7 @@ const SPEED_LIMIT = 60.0
 # Mixed params
 const SWEAR_IN_DURATION = 1.0
 const SWEAR_OUT_DURATION = 0.6
+const TURN_TO_STATUE_DELAY = 1.0
 const SPAWN_CHARACTER_DELAY = 0.4
 
 var _move_input : Vector3 = Vector3.ZERO
@@ -47,15 +48,18 @@ func death() -> void:
 	if not _is_dead:
 		_is_dead = true
 		
-		# Detach PlayerController
-		get_parent().release_character(self)
-		
 		var tween = get_tree().create_tween().bind_node(self).set_trans(Tween.TRANS_ELASTIC)
 		tween.tween_property(_swear_vignette, "scale", Vector3.ONE, SWEAR_IN_DURATION)
 		tween.tween_property(_swear_vignette, "scale", Vector3.ZERO, SWEAR_OUT_DURATION)
-		tween.tween_callback(func(): _turn_to_statue())
 		
 		_player_anim.set_hurt_trigger()
+		Global.Audio.play_beep()
+		
+		get_parent().release_character(self)  # Detach controller
+		await get_tree().create_timer(0.95).timeout  # Wait for approx hurt anim duration
+		get_parent().possess_character(self)  # Attach controller
+		await get_tree().create_timer(TURN_TO_STATUE_DELAY).timeout
+		_turn_to_statue()
 
 
 func drown() -> void:

@@ -7,6 +7,7 @@ var is_cooldown = false
 
 @onready var spike_area : Area3D = $Area3D
 @onready var spike_mesh : MeshInstance3D = $MeshInstance3D/Spikes
+@onready var audio_player : AudioStreamPlayer = $AudioStreamPlayer
 
 
 func _ready() -> void:
@@ -18,8 +19,10 @@ func interact_left() -> void:
 	
 	if not is_cooldown:
 		set_spikes(true)
+		audio_player.play()
 		await get_tree().create_timer(SPIKE_DURATION).timeout
 		set_spikes(false)
+		audio_player.play()
 
 
 func set_spikes(state: bool) -> void:

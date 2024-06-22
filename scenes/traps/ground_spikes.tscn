@@ -1,11 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnbkg0vx6gr74"]
+[gd_scene load_steps=9 format=3 uid="uid://cnbkg0vx6gr74"]
 
 [ext_resource type="Script" path="res://scripts/GroundSpikes.gd" id="1_xhyix"]
 [ext_resource type="ArrayMesh" uid="uid://ceg3xgiy8rhuj" path="res://graphics/models/meshes/SpikeTrap_Plate.tres" id="2_cd6vu"]
 [ext_resource type="ArrayMesh" uid="uid://cw8tko40dwm3d" path="res://graphics/models/meshes/SpikeTrap_Spikes.tres" id="3_es3rk"]
+[ext_resource type="AudioStream" uid="uid://vb8gja45x62i" path="res://audio/floor_spikes/Dagger woosh 3.wav" id="4_e5xt7"]
+[ext_resource type="AudioStream" uid="uid://e2ey55xrymux" path="res://audio/floor_spikes/Dagger woosh 5.wav" id="5_3lgjq"]
+[ext_resource type="AudioStream" uid="uid://b14nqjgqwewi3" path="res://audio/floor_spikes/Dagger woosh 7.wav" id="6_cg036"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4fmwf"]
 size = Vector3(2, 0.4, 2)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_l4drk"]
+random_pitch = 1.2
+random_volume_offset_db = 0.2
+streams_count = 3
+stream_0/stream = ExtResource("4_e5xt7")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("5_3lgjq")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("6_cg036")
+stream_2/weight = 1.0
 
 [node name="GroundSpikes" type="Node3D"]
 script = ExtResource("1_xhyix")
@@ -24,5 +38,10 @@ skeleton = NodePath("../Area3D")
 
 [node name="Spikes" type="MeshInstance3D" parent="MeshInstance3D"]
 mesh = ExtResource("3_es3rk")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_l4drk")
+volume_db = -4.0
+pitch_scale = 0.8
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

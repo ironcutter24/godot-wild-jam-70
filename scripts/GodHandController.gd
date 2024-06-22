@@ -13,15 +13,17 @@ func _unhandled_input(event) -> void:
 	var hit = cast_ray_from_mouse_pointer()
 	
 	if hit:
-		var node
 		var collider = hit["collider"]
+		
+		var node
 		if collider is MouseInteractive:
 			node = collider
 		elif collider.owner is MouseInteractive:
 			node = collider.owner
 		
-		if node:
+		if node != null:
 			if node != hovered_interactive:
+				_reset_current_hovered()
 				hovered_interactive = node
 				hovered_interactive.mouse_enter()
 			
@@ -29,6 +31,10 @@ func _unhandled_input(event) -> void:
 			if mouse_right : node.interact_right()
 			return
 	
+	_reset_current_hovered()
+
+
+func _reset_current_hovered() -> void:
 	if hovered_interactive != null:
 		hovered_interactive.mouse_exit()
 		hovered_interactive = null
