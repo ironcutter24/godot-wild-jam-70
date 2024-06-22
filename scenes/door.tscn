@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/Door.gd" id="1_31j3g"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ia7pk"]
-size = Vector3(2, 1.5, 0.5)
+size = Vector3(4, 2.5, 0.5)
 
 [sub_resource type="BoxMesh" id="BoxMesh_rvceg"]
 size = Vector3(4, 0.1, 1)
@@ -15,7 +15,7 @@ size = Vector3(4, 2.5, 0.5)
 script = ExtResource("1_31j3g")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
 shape = SubResource("BoxShape3D_ia7pk")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

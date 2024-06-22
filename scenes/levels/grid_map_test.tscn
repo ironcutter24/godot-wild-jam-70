@@ -44,7 +44,6 @@ transform = Transform3D(0.560162, 0, 0.828383, 0, 1, 0, -0.828383, 0, 0.560162, 
 [node name="Door" parent="DoorGroupTest" node_paths=PackedStringArray("_pressure_plates") instance=ExtResource("7_qdrjw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 5)
 _pressure_plates = [NodePath("../PressurePlate"), NodePath("../PressurePlate2")]
-_all_required = true
 
 [node name="PressurePlate" parent="DoorGroupTest" instance=ExtResource("8_6ac0l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 7)

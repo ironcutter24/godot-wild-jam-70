@@ -33,3 +33,4 @@ func _are_all_pressed() -> bool:
 func _set_open(state: bool) -> void:
 	_is_open = state
 	_door_mesh.hide() if _is_open else _door_mesh.show()
+	$CollisionShape3D.disabled = state

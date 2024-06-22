@@ -57,7 +57,7 @@ autoplay = true
 [node name="Systems" type="Node3D" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="Systems"]
-transform = Transform3D(0.813734, -0.39581, 0.42561, 1.49012e-08, 0.732248, 0.680976, -0.581238, -0.554134, 0.595854, 8, 14, 12)
+transform = Transform3D(0.813734, -0.39581, 0.42561, 1.49012e-08, 0.732248, 0.680976, -0.581238, -0.554134, 0.595854, 32, 56, 48)
 projection = 1
 fov = 60.0
 size = 24.0
@@ -98,7 +98,7 @@ text = "A new hero approaches..."
 scroll_active = false
 
 [node name="PlayerCam" type="Node3D" parent="Systems/PlayerController" node_paths=PackedStringArray("follow_target", "look_at_target")]
-transform = Transform3D(0.813734, -0.39581, 0.42561, 1.49012e-08, 0.732248, 0.680976, -0.581238, -0.554134, 0.595854, 8, 14, 12)
+transform = Transform3D(0.813734, -0.39581, 0.42561, 1.49012e-08, 0.732248, 0.680976, -0.581238, -0.554134, 0.595854, 32, 56, 48)
 script = ExtResource("5_cbamn")
 follow_mode = 2
 follow_target = NodePath("../CamTarget")
@@ -106,7 +106,7 @@ look_at_target = NodePath("../CamTarget")
 tween_resource = SubResource("Resource_8neqv")
 tween_on_load = false
 camera_3d_resource = SubResource("Resource_mi44n")
-follow_offset = Vector3(8, 14, 12)
+follow_offset = Vector3(32, 56, 48)
 follow_damping = true
 dead_zone_width = 0.127
 dead_zone_height = 0.205
@@ -123,6 +123,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 16)
 script = ExtResource("8_dinsw")
 
 [node name="GridMapTest" parent="." instance=ExtResource("9_sryqs")]
-
-[node name="GridMapTest2" parent="." instance=ExtResource("9_sryqs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -16)
