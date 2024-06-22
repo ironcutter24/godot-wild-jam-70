@@ -56,7 +56,7 @@ func death() -> void:
 		Global.Audio.play_beep()
 		
 		get_parent().release_character(self)  # Detach controller
-		await get_tree().create_timer(0.95).timeout  # Wait for approx hurt anim duration
+		await get_tree().create_timer(1.0).timeout  # Wait for approx hurt anim duration
 		get_parent().possess_character(self)  # Attach controller
 		await get_tree().create_timer(TURN_TO_STATUE_DELAY).timeout
 		_turn_to_statue()

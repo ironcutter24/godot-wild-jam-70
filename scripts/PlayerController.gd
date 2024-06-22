@@ -2,7 +2,8 @@ class_name PlayerController
 extends Node3D
 
 
-var spawn_point : Vector3
+var _spawn_pos : Vector3
+var _spawn_rot : Vector3
 
 @onready var player_cam : PhantomCamera3D = $PlayerCam
 @onready var cam_target : Node3D = $CamTarget
@@ -37,8 +38,9 @@ func _process(_delta) -> void:
 		cam_target.global_position = player.global_position
 
 
-func set_spawn_point(point: Vector3) -> void:
-	spawn_point = point
+func set_spawn_point(pos: Vector3, rot: Vector3) -> void:
+	_spawn_pos = pos
+	_spawn_rot = rot
 
 
 func possess_character(character: PlayerCharacter):
@@ -59,10 +61,11 @@ func spawn_statue_at(pos: Vector3, rot: Vector3):
 
 func spawn_and_possess_character(delay: float = 0.0):
 	await get_tree().create_timer(delay).timeout
-	if spawn_point:
+	if _spawn_pos and _spawn_rot:
 		player = player_scene.instantiate()
 		add_child(player)
-		player.global_position = spawn_point
+		player.global_position = _spawn_pos
+		player.global_rotation = _spawn_rot
 
 
 func get_input_vector() -> Vector3:

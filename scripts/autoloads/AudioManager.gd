@@ -1,9 +1,9 @@
 class_name AudioManager
 extends Node
 
+
 var _stream_index : int = 0
 @export var _stream_players : Array[AudioStreamPlayer]
-
 
 @export_group("Sounds")
 @export var _beep_sound : AudioStream

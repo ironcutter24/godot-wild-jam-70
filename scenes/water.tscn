@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://chqil7du8yor2"]
+[gd_scene load_steps=9 format=3 uid="uid://chqil7du8yor2"]
 
 [ext_resource type="Script" path="res://scripts/WaterKillBox.gd" id="1_y80fq"]
 [ext_resource type="Shader" path="res://graphics/shaders/stylized_water.gdshader" id="2_gke4r"]
+[ext_resource type="AudioStream" uid="uid://b32n4vkx510rt" path="res://audio/Waves Crashing on rocks.wav" id="3_cia71"]
+[ext_resource type="AudioStream" uid="uid://bor11ja35a23g" path="res://audio/water_splash.wav" id="3_n5ebf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_etswj"]
 size = Vector3(500, 20, 500)
@@ -22,6 +24,13 @@ shader_parameter/wave_speed = 1.5
 material = SubResource("ShaderMaterial_7ogrn")
 size = Vector2(500, 500)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_x236n"]
+random_pitch = 1.2
+random_volume_offset_db = 0.2
+streams_count = 1
+stream_0/stream = ExtResource("3_n5ebf")
+stream_0/weight = 1.0
+
 [node name="Water" type="Area3D"]
 collision_layer = 0
 collision_mask = 2
@@ -35,5 +44,14 @@ shape = SubResource("BoxShape3D_etswj")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 mesh = SubResource("PlaneMesh_u2xe2")
 skeleton = NodePath("../..")
+
+[node name="SplashSound" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_x236n")
+volume_db = -16.0
+
+[node name="AmbientWavesSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_cia71")
+volume_db = -16.0
+autoplay = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

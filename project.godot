@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 Global="*res://scenes/autoloads/global.tscn"
+GlobalEnvironment="*res://scenes/autoloads/environment.tscn"
+Systems="*res://scenes/autoloads/systems.tscn"
 
 [editor_plugins]
 

@@ -1,0 +1,91 @@
+[gd_scene load_steps=11 format=3 uid="uid://bm5sr4avwcd43"]
+
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_wt6yf"]
+[ext_resource type="Script" path="res://scripts/PlayerController.gd" id="2_a4shk"]
+[ext_resource type="PackedScene" uid="uid://ba8v05vt5xmx6" path="res://scenes/player_character.tscn" id="3_5q2y8"]
+[ext_resource type="PackedScene" uid="uid://cvx8s6ovc561d" path="res://scenes/player_statue.tscn" id="4_88oxa"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="5_en2a3"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="6_b5o00"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="7_67oph"]
+[ext_resource type="Script" path="res://scripts/GodHandController.gd" id="8_oxjtr"]
+
+[sub_resource type="Resource" id="Resource_8neqv"]
+script = ExtResource("6_b5o00")
+duration = 1.0
+transition = 1
+ease = 2
+
+[sub_resource type="Resource" id="Resource_mi44n"]
+script = ExtResource("7_67oph")
+cull_mask = 1048575
+h_offset = 0.0
+v_offset = 0.0
+projection = 1
+fov = 60.0
+size = 24.0
+frustum_offset = Vector2(0, 0)
+near = 0.05
+far = 4000.0
+
+[node name="Systems" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.813734, -0.39581, 0.42561, 1.49012e-08, 0.732248, 0.680976, -0.581238, -0.554134, 0.595854, 32, 56, 48)
+projection = 1
+fov = 60.0
+size = 24.0
+
+[node name="AudioListener3D" type="AudioListener3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0)
+current = true
+
+[node name="PhantomCameraHost" type="Node" parent="Camera3D"]
+script = ExtResource("1_wt6yf")
+
+[node name="PlayerController" type="Node3D" parent="." node_paths=PackedStringArray("new_knight_panel")]
+script = ExtResource("2_a4shk")
+player_scene = ExtResource("3_5q2y8")
+statue_scene = ExtResource("4_88oxa")
+new_knight_panel = NodePath("NewKnightPanel")
+
+[node name="NewKnightPanel" type="Control" parent="PlayerController"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PlayerController/NewKnightPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -86.0
+offset_top = 25.0
+offset_right = 187.0
+offset_bottom = 65.0
+grow_horizontal = 2
+text = "A new hero approaches..."
+scroll_active = false
+
+[node name="PlayerCam" type="Node3D" parent="PlayerController" node_paths=PackedStringArray("follow_target")]
+transform = Transform3D(0.813734, -0.39581, 0.42561, 1.49012e-08, 0.732248, 0.680976, -0.581238, -0.554134, 0.595854, 32, 56, 48)
+script = ExtResource("5_en2a3")
+follow_mode = 2
+follow_target = NodePath("../CamTarget")
+tween_resource = SubResource("Resource_8neqv")
+tween_on_load = false
+camera_3d_resource = SubResource("Resource_mi44n")
+follow_offset = Vector3(32, 56, 48)
+follow_damping = true
+dead_zone_width = 0.127
+dead_zone_height = 0.205
+
+[node name="CamTarget" type="Node3D" parent="PlayerController"]
+
+[node name="SpawnPoint" type="Node3D" parent="PlayerController"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71949, 1.5635, 10.7035)
+
+[node name="GodHand" type="Node3D" parent="."]
+script = ExtResource("8_oxjtr")
