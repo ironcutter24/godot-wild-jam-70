@@ -13,6 +13,14 @@ var spawn_point : Vector3
 @export var player : CharacterBody3D
 
 
+func _enter_tree():
+	Global.set_player_controller(self)
+
+
+func _exit_tree():
+	Global.set_player_controller(null)
+
+
 func _process(_delta) -> void:
 	if OS.has_feature("editor"):
 		if Input.is_action_just_pressed("debug_spawn_character"):

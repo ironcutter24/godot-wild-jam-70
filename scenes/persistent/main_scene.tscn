@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://ofwi350llt14"]
+[gd_scene load_steps=14 format=3 uid="uid://ofwi350llt14"]
 
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_jf4sp"]
 [ext_resource type="PackedScene" uid="uid://chqil7du8yor2" path="res://scenes/water.tscn" id="2_drpes"]
@@ -9,14 +9,7 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="7_hn6r8"]
 [ext_resource type="Script" path="res://scripts/GodHandController.gd" id="8_dinsw"]
 [ext_resource type="PackedScene" uid="uid://8ykhd66yj18x" path="res://scenes/levels/grid_map_test.tscn" id="9_sryqs"]
-[ext_resource type="PackedScene" uid="uid://bi0g6ucd6o5lq" path="res://scenes/traps/arrow_launcher.tscn" id="10_ucx4r"]
-[ext_resource type="PackedScene" uid="uid://b8rruq6x2e3cv" path="res://scenes/checkpoint.tscn" id="11_lc883"]
-[ext_resource type="PackedScene" uid="uid://dm5ccvgw8fdot" path="res://scenes/traps/flame_thrower.tscn" id="12_k37cj"]
-[ext_resource type="PackedScene" uid="uid://cnbkg0vx6gr74" path="res://scenes/traps/ground_spikes.tscn" id="13_4se2k"]
 [ext_resource type="PackedScene" uid="uid://cvx8s6ovc561d" path="res://scenes/player_statue.tscn" id="14_33j50"]
-[ext_resource type="PackedScene" uid="uid://set3rufnpnae" path="res://scenes/tree_prop.tscn" id="15_r8w2d"]
-[ext_resource type="PackedScene" uid="uid://caaidcaxd2nfe" path="res://scenes/pressure_plate.tscn" id="16_wnl80"]
-[ext_resource type="PackedScene" uid="uid://4ywa83djv3v7" path="res://scenes/door.tscn" id="17_m37s7"]
 
 [sub_resource type="Environment" id="Environment_nyeiy"]
 
@@ -53,20 +46,19 @@ light_bake_mode = 1
 shadow_enabled = true
 shadow_opacity = 0.92
 
-[node name="Camera3D" type="Camera3D" parent="Environment"]
-transform = Transform3D(0.813734, -0.39581, 0.42561, 1.49012e-08, 0.732248, 0.680976, -0.581238, -0.554134, 0.595854, 8, 14, 12)
-projection = 1
-size = 24.0
-
-[node name="PhantomCameraHost" type="Node" parent="Environment/Camera3D"]
-script = ExtResource("1_jf4sp")
-
 [node name="Water" parent="Environment" instance=ExtResource("2_drpes")]
 
 [node name="Systems" type="Node3D" parent="."]
 
+[node name="Camera3D" type="Camera3D" parent="Systems"]
+transform = Transform3D(0.813734, -0.39581, 0.42561, 1.49012e-08, 0.732248, 0.680976, -0.581238, -0.554134, 0.595854, 8, 14, 12)
+projection = 1
+size = 24.0
+
+[node name="PhantomCameraHost" type="Node" parent="Systems/Camera3D"]
+script = ExtResource("1_jf4sp")
+
 [node name="PlayerController" type="Node3D" parent="Systems" node_paths=PackedStringArray("player")]
-unique_name_in_owner = true
 script = ExtResource("3_iadoq")
 player_scene = ExtResource("4_ipt5w")
 statue_scene = ExtResource("14_33j50")
@@ -98,35 +90,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 16)
 script = ExtResource("8_dinsw")
 
 [node name="GridMapTest" parent="." instance=ExtResource("9_sryqs")]
-
-[node name="Checkpoint" parent="." instance=ExtResource("11_lc883")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 14)
-
-[node name="Checkpoint2" parent="." instance=ExtResource("11_lc883")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 8)
-
-[node name="ArrowLauncher" parent="." instance=ExtResource("10_ucx4r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4, -6)
-
-[node name="FlameThrower" parent="." instance=ExtResource("12_k37cj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 4)
-
-[node name="GroundSpikes" parent="." instance=ExtResource("13_4se2k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 9)
-
-[node name="TreeProp" parent="." instance=ExtResource("15_r8w2d")]
-transform = Transform3D(0.960245, 0, 0.279159, 0, 1, 0, -0.279159, 0, 0.960245, 9, 0, -3)
-
-[node name="TreeProp2" parent="." instance=ExtResource("15_r8w2d")]
-transform = Transform3D(0.560162, 0, 0.828383, 0, 1, 0, -0.828383, 0, 0.560162, 11, 0, 1)
-
-[node name="Door" parent="." node_paths=PackedStringArray("_pressure_plates") instance=ExtResource("17_m37s7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 5)
-_pressure_plates = [NodePath("../PressurePlate"), NodePath("../PressurePlate2")]
-_all_required = true
-
-[node name="PressurePlate" parent="." instance=ExtResource("16_wnl80")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 7)
-
-[node name="PressurePlate2" parent="." instance=ExtResource("16_wnl80")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 11)

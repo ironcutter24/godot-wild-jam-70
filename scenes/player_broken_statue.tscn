@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6sl5tjcaux2p"]
+
+[ext_resource type="Material" uid="uid://btu546rhhmky0" path="res://graphics/materials/spike_gold_mat.tres" id="1_b1xi8"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_v73op"]
+material = ExtResource("1_b1xi8")
+top_radius = 0.4
+bottom_radius = 0.4
+height = 0.2
+
+[node name="PlayerBrokenStatue" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+mesh = SubResource("CylinderMesh_v73op")

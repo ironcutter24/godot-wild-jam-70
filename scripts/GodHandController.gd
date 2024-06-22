@@ -29,7 +29,7 @@ func _unhandled_input(event) -> void:
 			if mouse_right : node.interact_right()
 			return
 	
-	if hovered_interactive:
+	if hovered_interactive != null:
 		hovered_interactive.mouse_exit()
 		hovered_interactive = null
 
