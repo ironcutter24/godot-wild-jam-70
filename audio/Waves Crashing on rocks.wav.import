@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b32n4vkx510rt"
+path="res://.godot/imported/Waves Crashing on rocks.wav-e3aae9dafc117396e9727d728cbf1277.sample"
+
+[deps]
+
+source_file="res://audio/Waves Crashing on rocks.wav"
+dest_files=["res://.godot/imported/Waves Crashing on rocks.wav-e3aae9dafc117396e9727d728cbf1277.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

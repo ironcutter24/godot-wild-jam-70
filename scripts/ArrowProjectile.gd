@@ -15,6 +15,7 @@ func _on_body_entered(body):
 	if is_enabled and (body != get_parent()):
 		if body is PlayerCharacter:
 			body.death()
+			Global.Audio.play_arrow_hit()
 		
 		is_enabled = false
 		call_deferred("set_contact_monitor", false)

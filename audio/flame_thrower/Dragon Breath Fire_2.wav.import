@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bvcrd8piq8y4t"
+path="res://.godot/imported/Dragon Breath Fire_2.wav-98310a65916b620402bb234337f2b53f.sample"
+
+[deps]
+
+source_file="res://audio/flame_thrower/Dragon Breath Fire_2.wav"
+dest_files=["res://.godot/imported/Dragon Breath Fire_2.wav-98310a65916b620402bb234337f2b53f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

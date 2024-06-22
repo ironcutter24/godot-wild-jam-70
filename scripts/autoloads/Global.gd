@@ -7,6 +7,9 @@ var _player_controller : PlayerController
 @export var _splash_scene_path : String
 @export var _game_scene_path : String
 
+@export_category("Managers")
+@export var Audio : AudioManager
+
 @export_group("Global Assets")
 @export var _outline_mat : Material
 

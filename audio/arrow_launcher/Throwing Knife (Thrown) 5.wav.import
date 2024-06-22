@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b4av6h622enrr"
+path="res://.godot/imported/Throwing Knife (Thrown) 5.wav-0635c8b3d9117dead3be8695c45a5ad3.sample"
+
+[deps]
+
+source_file="res://audio/arrow_launcher/Throwing Knife (Thrown) 5.wav"
+dest_files=["res://.godot/imported/Throwing Knife (Thrown) 5.wav-0635c8b3d9117dead3be8695c45a5ad3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

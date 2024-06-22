@@ -9,12 +9,14 @@ var spawn_point : Vector3
 
 @export var player_scene : PackedScene
 @export var statue_scene : PackedScene
+@export var new_knight_panel : Control
 
 @export var player : CharacterBody3D
 
 
 func _enter_tree():
 	Global.set_player_controller(self)
+	new_knight_panel.visible = false
 
 
 func _exit_tree():
@@ -37,6 +39,10 @@ func _process(_delta) -> void:
 
 func set_spawn_point(point: Vector3) -> void:
 	spawn_point = point
+
+
+func possess_character(character: PlayerCharacter):
+	player = character
 
 
 func release_character(character: PlayerCharacter):

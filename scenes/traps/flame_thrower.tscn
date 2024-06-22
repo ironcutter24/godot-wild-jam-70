@@ -1,14 +1,28 @@
-[gd_scene load_steps=6 format=3 uid="uid://dm5ccvgw8fdot"]
+[gd_scene load_steps=10 format=3 uid="uid://dm5ccvgw8fdot"]
 
 [ext_resource type="Script" path="res://scripts/FlameThrower.gd" id="1_tj53g"]
 [ext_resource type="PackedScene" uid="uid://c0eflj1kim651" path="res://scenes/traps/flame_particles.tscn" id="2_mat5e"]
 [ext_resource type="ArrayMesh" uid="uid://bqy0jmaq5d3td" path="res://graphics/models/meshes/FlameThrower.tres" id="2_r8h8h"]
+[ext_resource type="AudioStream" uid="uid://dfey4un1qqh31" path="res://audio/flame_thrower/Dragon Breath Fire.wav" id="4_d80fl"]
+[ext_resource type="AudioStream" uid="uid://cgu0ys4b3whj" path="res://audio/flame_thrower/Dragon Breath Fire_1.wav" id="5_l31l4"]
+[ext_resource type="AudioStream" uid="uid://bvcrd8piq8y4t" path="res://audio/flame_thrower/Dragon Breath Fire_2.wav" id="6_3e2rp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0xj7b"]
 size = Vector3(1, 2.3208, 0.840137)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mf4w1"]
 size = Vector3(1, 1, 3)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_76642"]
+random_pitch = 1.2
+random_volume_offset_db = 0.2
+streams_count = 3
+stream_0/stream = ExtResource("4_d80fl")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("5_l31l4")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("6_3e2rp")
+stream_2/weight = 1.0
 
 [node name="FlameThrower" type="StaticBody3D"]
 script = ExtResource("1_tj53g")
@@ -32,5 +46,9 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FlameParticles/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
 shape = SubResource("BoxShape3D_mf4w1")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_76642")
+volume_db = -16.0
 
 [connection signal="body_entered" from="FlameParticles/Area3D" to="." method="_on_area_3d_body_entered"]

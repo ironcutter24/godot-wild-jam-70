@@ -6,6 +6,8 @@ const COOLDOWN_DURATION = 0.5
 
 var is_cooldown = false
 
+@onready var audio_player : AudioStreamPlayer = $AudioStreamPlayer
+
 @export var arrow_scene : PackedScene
 @export var spawn_points : Array[Node3D]
 
@@ -23,6 +25,7 @@ func interact_left() -> void:
 func shoot() -> void:
 	for p in spawn_points:
 		launch_dart(p)
+	audio_player.play()
 
 
 func launch_dart(point: Node3D) -> void:

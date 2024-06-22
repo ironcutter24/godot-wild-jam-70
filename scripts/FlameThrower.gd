@@ -5,6 +5,7 @@ const EMISSION_DURATION = 2.0
 
 @onready var flame_particles : GPUParticles3D = $FlameParticles
 @onready var flame_area : Area3D = $FlameParticles/Area3D
+@onready var audio_player : AudioStreamPlayer = $AudioStreamPlayer
 
 
 func _ready() -> void:
@@ -16,6 +17,7 @@ func interact_left() -> void:
 	
 	if not flame_particles.emitting:
 		set_flame(true)
+		audio_player.play()
 		await get_tree().create_timer(EMISSION_DURATION).timeout
 		set_flame(false)
 
