@@ -22,6 +22,11 @@ Global="*res://scenes/autoloads/global.tscn"
 GlobalEnvironment="*res://scenes/autoloads/environment.tscn"
 Systems="*res://scenes/autoloads/systems.tscn"
 
+[display]
+
+mouse_cursor/custom_image="res://graphics/sprites/cursors/providence (outline).png"
+mouse_cursor/custom_image_hotspot=Vector2(32, 8)
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/phantom_camera/plugin.cfg")
