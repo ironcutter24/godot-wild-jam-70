@@ -69,12 +69,11 @@ current = true
 [node name="PhantomCameraHost" type="Node" parent="Systems/Camera3D"]
 script = ExtResource("1_jf4sp")
 
-[node name="PlayerController" type="Node3D" parent="Systems" node_paths=PackedStringArray("new_knight_panel", "player")]
+[node name="PlayerController" type="Node3D" parent="Systems" node_paths=PackedStringArray("new_knight_panel")]
 script = ExtResource("3_iadoq")
 player_scene = ExtResource("4_ipt5w")
 statue_scene = ExtResource("14_33j50")
 new_knight_panel = NodePath("NewKnightPanel")
-player = NodePath("PlayerCharacter")
 
 [node name="NewKnightPanel" type="Control" parent="Systems/PlayerController"]
 layout_mode = 3
@@ -115,9 +114,6 @@ dead_zone_height = 0.205
 
 [node name="SpawnPoint" type="Node3D" parent="Systems/PlayerController"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71949, 1.5635, 10.7035)
-
-[node name="PlayerCharacter" parent="Systems/PlayerController" instance=ExtResource("4_ipt5w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 16)
 
 [node name="GodHand" type="Node3D" parent="Systems"]
 script = ExtResource("8_dinsw")

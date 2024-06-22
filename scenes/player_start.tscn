@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2org6ok0p0xb"]
+
+[ext_resource type="Script" path="res://scripts/PlayerStart.gd" id="1_eter4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fuf60"]
+transparency = 1
+albedo_color = Color(1, 1, 0, 0.705882)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_d2fcn"]
+material = SubResource("StandardMaterial3D_fuf60")
+height = 1.8
+
+[node name="PlayerStart" type="Node3D"]
+script = ExtResource("1_eter4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+mesh = SubResource("CapsuleMesh_d2fcn")

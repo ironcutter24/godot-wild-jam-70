@@ -41,7 +41,7 @@ mesh = ExtResource("3_es3rk")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_l4drk")
-volume_db = -4.0
+volume_db = -12.0
 pitch_scale = 0.8
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
