@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dc15qd5cfq6nb"]
+[gd_scene load_steps=9 format=3 uid="uid://dc15qd5cfq6nb"]
 
 [ext_resource type="MeshLibrary" uid="uid://btegh8u6en8b0" path="res://MeshLibrary.tres" id="1_py35e"]
 [ext_resource type="PackedScene" uid="uid://cnbkg0vx6gr74" path="res://scenes/traps/ground_spikes.tscn" id="2_7hth6"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://4ywa83djv3v7" path="res://scenes/door.tscn" id="4_u7lby"]
 [ext_resource type="PackedScene" uid="uid://set3rufnpnae" path="res://scenes/tree_prop.tscn" id="5_30ino"]
 [ext_resource type="PackedScene" uid="uid://k0eq4jy11fp0" path="res://scenes/tree_prop_bright.tscn" id="6_heknq"]
+[ext_resource type="PackedScene" uid="uid://di7qbbea0x658" path="res://scenes/next_level_volume.tscn" id="8_dk8py"]
 
 [node name="Livello1" type="Node3D"]
 
@@ -56,3 +57,6 @@ _stay_open = true
 
 [node name="TreePropBright2" parent="GridMap" instance=ExtResource("6_heknq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4783, 0, -17.3631)
+
+[node name="NextLevelVolume" parent="GridMap" instance=ExtResource("8_dk8py")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, -34)
