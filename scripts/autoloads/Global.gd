@@ -4,6 +4,8 @@ extends Node
 var _player_controller : PlayerController
 var _level_index : int = 0
 
+@onready var _theme_audio = $ThemeAudio
+
 @export_category("Scene Management")
 @export var _level_list : Array[String]
 
@@ -27,13 +29,15 @@ func load_next_scene():
 	_level_index += 1
 	print(str("Loading level: ", _level_index))
 	
+	if _level_index >= _level_list.size():
+		_level_index = 0
+	
 	if _level_index == 2:
 		# Start theme music
 		set_theme_music(true)
 	elif _level_index == 0:
 		# Stop level music
 		set_theme_music(false)
-	
 	
 	_load_scene(_level_list[_level_index])
 
@@ -55,4 +59,7 @@ func get_outline_mat() -> Material:
 
 
 func set_theme_music(state: bool) -> void:
-	pass
+	if state:
+		_theme_audio.play()
+	else:
+		_theme_audio.stop()
