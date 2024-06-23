@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dpueiau87q3om"]
+[gd_scene load_steps=17 format=3 uid="uid://dpueiau87q3om"]
 
 [ext_resource type="ArrayMesh" uid="uid://bki7q3e5l88sd" path="res://graphics/models/meshes/BlockStoneTilted.tres" id="1_tr5v2"]
 [ext_resource type="ArrayMesh" uid="uid://d2vkliyq5gfxp" path="res://graphics/models/meshes/StairsStone.tres" id="2_dstrj"]
@@ -8,6 +8,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dvjsk2ow38qte" path="res://graphics/models/meshes/BlockStone.tres" id="5_lldm3"]
 [ext_resource type="Texture2D" uid="uid://dcmnuytkdv0sw" path="res://graphics/models/GroundBlock_2_StoneToon1.jpg" id="6_vfr1x"]
 [ext_resource type="Texture2D" uid="uid://bd702wjk4kwng" path="res://graphics/models/GroundBlock_2_GrassToonText2.jpg" id="7_m6qqc"]
+[ext_resource type="Texture2D" uid="uid://nlaq3ykd4tnn" path="res://graphics/models/Woodblock_toonparquet.jpg" id="9_0w8gb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ev54v"]
 resource_name = "Stone"
@@ -76,6 +77,45 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_lvrpb")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m1w45"]
+resource_name = "block_wood_mat"
+cull_mode = 2
+albedo_texture = ExtResource("9_0w8gb")
+metallic_specular = 0.0
+roughness = 0.6
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_qwmg7"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2.00001),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0, 2, 0, 7, 0, 3, 0, 2, 0, 6, 0, 7, 0, 6, 0, 5, 0, 7, 0, 6, 0, 4, 0, 5, 0, 4, 0, 1, 0, 5, 0, 4, 0, 0, 0, 1, 0, 2, 0, 4, 0, 6, 0, 2, 0, 0, 0, 4, 0, 7, 0, 1, 0, 3, 0, 7, 0, 5, 0, 1, 0),
+"name": "block_wood_mat",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 0, 0, 0, 0, 255, 255, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 255, 255, 0, 0, 254, 255, 0, 0, 255, 255, 255, 255, 254, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 255, 255, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_714nh"]
+resource_name = "Woodblock_Cube_001"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2.00001),
+"attribute_data": PackedByteArray(232, 129, 186, 254, 239, 128, 225, 128, 1, 129, 244, 128, 73, 255, 186, 254, 86, 255, 244, 128, 118, 128, 255, 255, 232, 129, 46, 129, 239, 128, 134, 255, 184, 255, 200, 128, 73, 255, 46, 129, 12, 129, 200, 128, 118, 128, 105, 128, 104, 255, 225, 128, 1, 129, 115, 255, 255, 255, 230, 255, 86, 255, 115, 255, 225, 255, 255, 255, 197, 128, 230, 255, 104, 255, 134, 255, 184, 255, 159, 255, 255, 255, 129, 128, 12, 129, 159, 255, 225, 255, 105, 128, 197, 128, 129, 128),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray(0, 0, 9, 0, 3, 0, 0, 0, 6, 0, 9, 0, 8, 0, 21, 0, 10, 0, 8, 0, 19, 0, 21, 0, 20, 0, 17, 0, 23, 0, 20, 0, 14, 0, 17, 0, 13, 0, 4, 0, 15, 0, 13, 0, 2, 0, 4, 0, 7, 0, 12, 0, 18, 0, 7, 0, 1, 0, 12, 0, 22, 0, 5, 0, 11, 0, 22, 0, 16, 0, 5, 0),
+"material": SubResource("StandardMaterial3D_m1w45"),
+"name": "block_wood_mat",
+"primitive": 3,
+"uv_scale": Vector4(2.00786, 2.00517, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 84, 213, 0, 0, 0, 0, 254, 255, 255, 191, 0, 0, 0, 0, 254, 255, 255, 191, 0, 0, 255, 255, 254, 255, 84, 213, 0, 0, 255, 255, 254, 255, 255, 191, 0, 0, 255, 255, 254, 255, 255, 191, 0, 0, 0, 0, 0, 0, 84, 213, 0, 0, 0, 0, 0, 0, 255, 191, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 84, 213, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 191, 255, 255, 0, 0, 254, 255, 255, 191, 255, 255, 0, 0, 254, 255, 255, 191, 255, 255, 0, 0, 254, 255, 84, 213, 255, 255, 255, 255, 254, 255, 255, 191, 255, 255, 255, 255, 254, 255, 255, 191, 255, 255, 255, 255, 254, 255, 84, 213, 255, 255, 0, 0, 0, 0, 255, 191, 255, 255, 0, 0, 0, 0, 255, 255, 255, 255, 0, 0, 0, 0, 84, 213, 255, 255, 255, 255, 0, 0, 255, 255, 255, 255, 255, 255, 0, 0, 255, 191, 255, 255, 255, 255, 0, 0, 84, 213, 84, 213, 84, 213, 0, 0, 255, 127, 255, 255, 255, 255, 84, 213, 84, 213, 255, 255, 255, 255, 255, 255, 255, 127, 84, 213, 84, 213, 0, 0, 255, 127, 255, 63, 255, 191, 84, 213, 84, 213, 255, 63, 255, 191, 255, 255, 255, 127, 0, 0, 255, 127, 255, 255, 255, 255, 170, 170, 84, 85, 255, 255, 255, 255, 255, 255, 255, 127, 170, 170, 84, 85, 0, 0, 255, 127, 255, 63, 255, 191, 170, 170, 84, 85, 255, 63, 255, 191, 255, 255, 255, 127, 170, 170, 84, 85)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_qwmg7")
+
 [node name="MeshLibrarySource" type="Node3D"]
 
 [node name="BlockStoneTilted" type="MeshInstance3D" parent="."]
@@ -111,3 +151,10 @@ mesh = ExtResource("5_lldm3")
 skeleton = NodePath("")
 
 [node name="TileBlockBody" parent="BlockStone" instance=ExtResource("2_nal2s")]
+
+[node name="Woodblock" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16)
+mesh = SubResource("ArrayMesh_714nh")
+skeleton = NodePath("")
+
+[node name="TileBlockBody" parent="Woodblock" instance=ExtResource("2_nal2s")]
