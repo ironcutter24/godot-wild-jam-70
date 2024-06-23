@@ -15,6 +15,10 @@ var _level_index : int = 0
 
 
 func _input(event: InputEvent):
+	if OS.has_feature("editor"):
+		if event.is_action_pressed("debug_next_level"):
+			load_next_scene()
+	
 	if event.is_action_pressed("quit_game"):
 		get_tree().quit()
 
@@ -22,6 +26,15 @@ func _input(event: InputEvent):
 func load_next_scene():
 	_level_index += 1
 	print(str("Loading level: ", _level_index))
+	
+	if _level_index == 2:
+		# Start theme music
+		set_theme_music(true)
+	elif _level_index == 0:
+		# Stop level music
+		set_theme_music(false)
+	
+	
 	_load_scene(_level_list[_level_index])
 
 func reload_current_scene():
@@ -39,3 +52,7 @@ func set_player_controller(controller: PlayerController) -> void:
 
 func get_outline_mat() -> Material:
 	return _outline_mat
+
+
+func set_theme_music(state: bool) -> void:
+	pass
