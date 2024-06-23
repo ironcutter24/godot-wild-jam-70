@@ -24,6 +24,7 @@ Systems="*res://scenes/autoloads/systems.tscn"
 
 [display]
 
+window/size/mode=3
 mouse_cursor/custom_image="res://graphics/sprites/cursors/providence (outline).png"
 mouse_cursor/custom_image_hotspot=Vector2(32, 8)
 

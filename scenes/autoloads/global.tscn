@@ -15,3 +15,4 @@ _outline_mat = ExtResource("2_7y8v6")
 
 [node name="ThemeAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_evi18")
+volume_db = -12.0
