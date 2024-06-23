@@ -3,8 +3,6 @@ extends Area3D
 
 var _was_pressed = false
 
-@onready var _audio_player = $AudioStreamPlayer
-
 
 func is_pressed() -> bool:
 	var _is_pressed = get_overlapping_bodies().size() > 0
