@@ -185,16 +185,16 @@ shape = SubResource("BoxShape3D_ia7pk")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_3tr1a")
 
-[node name="DoorMesh" type="MeshInstance3D" parent="MeshInstance3D"]
+[node name="Doors" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
 
-[node name="Singledoor1" type="MeshInstance3D" parent="MeshInstance3D/DoorMesh"]
+[node name="MeshLeft" type="MeshInstance3D" parent="Doors"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.50967, -1.25, -0.0758922)
 mesh = SubResource("ArrayMesh_xsqp6")
 skeleton = NodePath("")
 
-[node name="Singledoor2" type="MeshInstance3D" parent="MeshInstance3D/DoorMesh"]
-transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 1.51014, -1.25, -0.0647329)
+[node name="MeshRight" type="MeshInstance3D" parent="Doors"]
+transform = Transform3D(-1, 0, 0, 0, 1, -1.50996e-07, 0, 1.50996e-07, 1, 1.51014, -1.25, -0.0647329)
 mesh = SubResource("ArrayMesh_0vw3n")
 skeleton = NodePath("")
 
