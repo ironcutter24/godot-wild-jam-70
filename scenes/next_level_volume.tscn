@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://di7qbbea0x658"]
+
+[ext_resource type="Script" path="res://scripts/NextLevelVolume.gd" id="1_llu5v"]
+[ext_resource type="Material" uid="uid://bxlegyrftxm3f" path="res://graphics/materials/player_start_mat.tres" id="2_u5eig"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7og45"]
+material = ExtResource("2_u5eig")
+size = Vector3(4, 2, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fhwax"]
+size = Vector3(4, 2, 1)
+
+[node name="NextLevelVolume" type="Node3D"]
+script = ExtResource("1_llu5v")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_7og45")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_fhwax")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

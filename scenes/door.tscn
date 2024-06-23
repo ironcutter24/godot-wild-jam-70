@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://4ywa83djv3v7"]
+[gd_scene load_steps=16 format=3 uid="uid://4ywa83djv3v7"]
 
 [ext_resource type="Script" path="res://scripts/Door.gd" id="1_31j3g"]
 [ext_resource type="Texture2D" uid="uid://bq8jt24u81qcu" path="res://graphics/models/Godotdoor_01_StoneToon1.jpg" id="2_dtsiq"]
 [ext_resource type="Texture2D" uid="uid://ddspbelbl5wej" path="res://graphics/models/Godotdoor_01_Toonwood.jpg" id="3_tpr0r"]
 [ext_resource type="Texture2D" uid="uid://c0758nusl87yt" path="res://graphics/models/Godotdoor_01_GoldTexture.jpg" id="4_s0w05"]
+[ext_resource type="PackedScene" uid="uid://di7qbbea0x658" path="res://scenes/next_level_volume.tscn" id="5_njwwr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ia7pk"]
 size = Vector3(4, 2.5, 0.5)
@@ -184,15 +185,18 @@ shape = SubResource("BoxShape3D_ia7pk")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_3tr1a")
 
-[node name="DoorMesh" type="MeshInstance3D" parent="MeshInstance3D"]
+[node name="Doors" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
 
-[node name="Singledoor1" type="MeshInstance3D" parent="MeshInstance3D/DoorMesh"]
+[node name="MeshLeft" type="MeshInstance3D" parent="Doors"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.50967, -1.25, -0.0758922)
 mesh = SubResource("ArrayMesh_xsqp6")
 skeleton = NodePath("")
 
-[node name="Singledoor2" type="MeshInstance3D" parent="MeshInstance3D/DoorMesh"]
-transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 1.51014, -1.25, -0.0647329)
+[node name="MeshRight" type="MeshInstance3D" parent="Doors"]
+transform = Transform3D(-1, 0, 0, 0, 1, -1.50996e-07, 0, 1.50996e-07, 1, 1.51014, -1.25, -0.0647329)
 mesh = SubResource("ArrayMesh_0vw3n")
 skeleton = NodePath("")
+
+[node name="NextLevelVolume" parent="." instance=ExtResource("5_njwwr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.75)

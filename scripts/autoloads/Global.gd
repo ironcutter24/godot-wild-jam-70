@@ -2,10 +2,10 @@ extends Node
 
 
 var _player_controller : PlayerController
+var _level_index : int = 0
 
 @export_category("Scene Management")
-@export var _splash_scene_path : String
-@export var _game_scene_path : String
+@export var _level_list : Array[String]
 
 @export_category("Managers")
 @export var Audio : AudioManager
@@ -19,23 +19,23 @@ func _input(event: InputEvent):
 		get_tree().quit()
 
 
-func load_splash_scene():
-	load_scene(_splash_scene_path)
+func load_next_scene():
+	_level_index += 1
+	print(str("Loading level: ", _level_index))
+	_load_scene(_level_list[_level_index])
 
-func load_game_scene():
-	load_scene(_game_scene_path)
+func reload_current_scene():
+	_load_scene(_level_list[_level_index])
 
-func load_scene(path : String):
+func _load_scene(path : String):
 	get_tree().change_scene_to_file(path)
-
-
-func get_outline_mat() -> Material:
-	return _outline_mat
 
 
 func get_player_controller() -> PlayerController:
 	return _player_controller
 
-
 func set_player_controller(controller: PlayerController) -> void:
 	_player_controller = controller
+
+func get_outline_mat() -> Material:
+	return _outline_mat

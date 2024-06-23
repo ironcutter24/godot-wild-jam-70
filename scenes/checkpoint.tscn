@@ -17,9 +17,8 @@ size = Vector3(4, 0.5, 0.5)
 [sub_resource type="BoxShape3D" id="BoxShape3D_yajrb"]
 size = Vector3(3, 2.5, 0.7)
 
-[node name="Checkpoint" type="Node3D" node_paths=PackedStringArray("point")]
+[node name="Checkpoint" type="Node3D"]
 script = ExtResource("1_scg08")
-point = NodePath("SpawnPoint")
 
 [node name="SpawnPoint" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
