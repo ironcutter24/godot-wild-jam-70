@@ -10,6 +10,11 @@ var _is_open : bool = false
 @export var _stay_open : bool = false
 
 
+func _ready():
+	if not _pressure_plates:
+		push_warning("No pressure plate assigned to door")
+
+
 func _physics_process(_delta):
 	if not _stay_open or not _is_open:
 		var should_open = _are_all_pressed() if _all_required else _are_any_pressed()
@@ -18,14 +23,14 @@ func _physics_process(_delta):
 
 func _are_any_pressed() -> bool:
 	for plate in _pressure_plates:
-		if plate.is_pressed():
+		if plate and plate.is_pressed():
 			return true
 	return false
 
 
 func _are_all_pressed() -> bool:
 	for plate in _pressure_plates:
-		if not plate.is_pressed():
+		if plate and not plate.is_pressed():
 			return false
 	return true
 

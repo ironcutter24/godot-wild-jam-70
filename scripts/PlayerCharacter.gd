@@ -69,6 +69,10 @@ func drown() -> void:
 		queue_free()
 
 
+func destroy() -> void:
+	call_deferred("queue_free")
+
+
 func _physics_process(delta) -> void:
 	# Add the gravity.
 	if not is_on_floor():

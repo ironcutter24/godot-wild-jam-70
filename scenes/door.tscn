@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://4ywa83djv3v7"]
+[gd_scene load_steps=16 format=3 uid="uid://4ywa83djv3v7"]
 
 [ext_resource type="Script" path="res://scripts/Door.gd" id="1_31j3g"]
 [ext_resource type="Texture2D" uid="uid://bq8jt24u81qcu" path="res://graphics/models/Godotdoor_01_StoneToon1.jpg" id="2_dtsiq"]
 [ext_resource type="Texture2D" uid="uid://ddspbelbl5wej" path="res://graphics/models/Godotdoor_01_Toonwood.jpg" id="3_tpr0r"]
 [ext_resource type="Texture2D" uid="uid://c0758nusl87yt" path="res://graphics/models/Godotdoor_01_GoldTexture.jpg" id="4_s0w05"]
+[ext_resource type="PackedScene" uid="uid://di7qbbea0x658" path="res://scenes/next_level_volume.tscn" id="5_njwwr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ia7pk"]
 size = Vector3(4, 2.5, 0.5)
@@ -196,3 +197,6 @@ skeleton = NodePath("")
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 1.51014, -1.25, -0.0647329)
 mesh = SubResource("ArrayMesh_0vw3n")
 skeleton = NodePath("")
+
+[node name="NextLevelVolume" parent="." instance=ExtResource("5_njwwr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.75)

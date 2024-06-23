@@ -54,18 +54,18 @@ func release_character(character: PlayerCharacter):
 
 func spawn_statue_at(pos: Vector3, rot: Vector3):
 	var statue = statue_scene.instantiate()
-	add_child(statue)
+	get_tree().current_scene.add_child(statue)
 	statue.global_position = pos
 	statue.global_rotation = rot
 
 
 func spawn_and_possess_character(delay: float = 0.0):
 	await get_tree().create_timer(delay).timeout
-	if _spawn_pos and _spawn_rot:
-		player = player_scene.instantiate()
-		add_child(player)
-		player.global_position = _spawn_pos
-		player.global_rotation = _spawn_rot
+	
+	player = player_scene.instantiate()
+	add_child(player)
+	player.global_position = _spawn_pos
+	player.global_rotation = _spawn_rot
 
 
 func get_input_vector() -> Vector3:
