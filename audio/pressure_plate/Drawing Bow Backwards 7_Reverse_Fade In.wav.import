@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ddpxucu8gwrgk"
+path="res://.godot/imported/Drawing Bow Backwards 7_Reverse_Fade In.wav-5cf136e183c9c65835b192bc1b33fcdd.sample"
+
+[deps]
+
+source_file="res://audio/pressure_plate/Drawing Bow Backwards 7_Reverse_Fade In.wav"
+dest_files=["res://.godot/imported/Drawing Bow Backwards 7_Reverse_Fade In.wav-5cf136e183c9c65835b192bc1b33fcdd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
