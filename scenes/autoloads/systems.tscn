@@ -20,7 +20,7 @@ script = ExtResource("7_67oph")
 cull_mask = 1048575
 h_offset = 0.0
 v_offset = 0.0
-projection = 1
+projection = 0
 fov = 60.0
 size = 24.0
 frustum_offset = Vector2(0, 0)
@@ -31,7 +31,6 @@ far = 4000.0
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.813734, -0.39581, 0.42561, 1.49012e-08, 0.732248, 0.680976, -0.581238, -0.554134, 0.595854, 32, 56, 48)
-projection = 1
 fov = 60.0
 size = 24.0
 
