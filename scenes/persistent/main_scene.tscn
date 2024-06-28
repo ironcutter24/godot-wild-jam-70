@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://ofwi350llt14"]
-
-[ext_resource type="PackedScene" uid="uid://8ykhd66yj18x" path="res://scenes/levels/grid_map_test.tscn" id="9_sryqs"]
-
-[node name="MainScene" type="Node3D"]
-
-[node name="GridMapTest" parent="." instance=ExtResource("9_sryqs")]

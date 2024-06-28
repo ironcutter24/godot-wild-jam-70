@@ -21,93 +21,124 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="PressurePlate" parent="GridMap" instance=ExtResource("2_j7ime")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9839, -0.00733471, -4.9852)
-
-[node name="PressurePlate2" parent="GridMap" instance=ExtResource("2_j7ime")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, -0.00733566, -5)
-
-[node name="PressurePlate3" parent="GridMap" instance=ExtResource("2_j7ime")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, -0.00733566, -5)
-
-[node name="PressurePlate4" parent="GridMap" instance=ExtResource("2_j7ime")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, -0.00733566, -5)
-
-[node name="PressurePlate5" parent="GridMap" instance=ExtResource("2_j7ime")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, -0.00733566, -5)
-
-[node name="PressurePlate6" parent="GridMap" instance=ExtResource("2_j7ime")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, -0.00733566, -7)
-
-[node name="PressurePlate7" parent="GridMap" instance=ExtResource("2_j7ime")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, -0.00733566, -7)
-
-[node name="PressurePlate8" parent="GridMap" instance=ExtResource("2_j7ime")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, -0.00733566, -7)
-
-[node name="PressurePlate9" parent="GridMap" instance=ExtResource("2_j7ime")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.0984, -0.00733566, -7)
-
-[node name="PressurePlate10" parent="GridMap" instance=ExtResource("2_j7ime")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1148, -0.00733566, -7)
-
-[node name="PressurePlate11" parent="GridMap" instance=ExtResource("2_j7ime")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, -0.00733566, -9)
-
-[node name="PressurePlate12" parent="GridMap" instance=ExtResource("2_j7ime")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, -0.00733566, -13)
-
-[node name="PressurePlate13" parent="GridMap" instance=ExtResource("2_j7ime")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, -0.00733566, -11)
-
-[node name="PressurePlate14" parent="GridMap" instance=ExtResource("2_j7ime")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, -0.00733566, -9)
-
-[node name="PressurePlate15" parent="GridMap" instance=ExtResource("2_j7ime")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, -0.00733566, -9)
-
-[node name="PressurePlate16" parent="GridMap" instance=ExtResource("2_j7ime")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, -0.00733566, -11)
-
-[node name="PressurePlate17" parent="GridMap" instance=ExtResource("2_j7ime")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, -0.00733566, -9)
-
-[node name="PressurePlate18" parent="GridMap" instance=ExtResource("2_j7ime")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, -0.00733566, -9)
-
-[node name="PressurePlate19" parent="GridMap" instance=ExtResource("2_j7ime")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, -0.00733566, -13)
-
-[node name="PressurePlate20" parent="GridMap" instance=ExtResource("2_j7ime")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, -0.00733566, -11)
-
-[node name="PressurePlate21" parent="GridMap" instance=ExtResource("2_j7ime")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, -0.00733566, -13)
-
-[node name="PressurePlate22" parent="GridMap" instance=ExtResource("2_j7ime")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, -0.00733566, -13)
-
-[node name="PressurePlate23" parent="GridMap" instance=ExtResource("2_j7ime")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, -0.00733566, -11)
-
-[node name="PressurePlate24" parent="GridMap" instance=ExtResource("2_j7ime")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, -0.00733566, -13)
-
-[node name="PressurePlate25" parent="GridMap" instance=ExtResource("2_j7ime")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, -0.00733566, -11)
-
-[node name="Door" parent="GridMap" node_paths=PackedStringArray("_pressure_plates") instance=ExtResource("4_lr6w6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9944, 0.0333519, -18.3208)
-_pressure_plates = [NodePath("../PressurePlate4"), NodePath("../PressurePlate25"), NodePath("../PressurePlate13"), NodePath("../PressurePlate22")]
-_all_required = true
-
 [node name="PlayerStart" parent="GridMap" instance=ExtResource("2_v5rkb")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 2.37591, -4.10598, 18.2395)
 
-[node name="NextLevelVolume" parent="GridMap" instance=ExtResource("5_ddjwk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -20)
+[node name="Checkpoint" parent="GridMap" instance=ExtResource("9_rky4h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.985197, 0, -2.26125)
 
-[node name="PressurePlates" type="Node3D" parent="."]
+[node name="Door" parent="GridMap" node_paths=PackedStringArray("_pressure_plates") instance=ExtResource("4_lr6w6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -19)
+_pressure_plates = [NodePath("Row1/PressurePlate"), NodePath("Row1/PressurePlate2"), NodePath("Row1/PressurePlate3"), NodePath("Row1/PressurePlate4"), NodePath("Row1/PressurePlate5"), NodePath("Row2/PressurePlate"), NodePath("Row2/PressurePlate2"), NodePath("Row2/PressurePlate3"), NodePath("Row2/PressurePlate4"), NodePath("Row2/PressurePlate5"), NodePath("Row3/PressurePlate"), NodePath("Row3/PressurePlate2"), NodePath("Row3/PressurePlate3"), NodePath("Row3/PressurePlate4"), NodePath("Row3/PressurePlate5"), NodePath("Row4/PressurePlate"), NodePath("Row4/PressurePlate2"), NodePath("Row4/PressurePlate3"), NodePath("Row4/PressurePlate4"), NodePath("Row4/PressurePlate5"), NodePath("Row5/PressurePlate"), NodePath("Row5/PressurePlate2"), NodePath("Row5/PressurePlate3"), NodePath("Row5/PressurePlate4"), NodePath("Row5/PressurePlate5")]
+
+[node name="NextLevelVolume" parent="GridMap/Door" instance=ExtResource("5_ddjwk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="Row1" type="Node3D" parent="GridMap/Door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 6)
+
+[node name="PressurePlate" parent="GridMap/Door/Row1" instance=ExtResource("2_j7ime")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+_is_inverted = true
+
+[node name="PressurePlate2" parent="GridMap/Door/Row1" instance=ExtResource("2_j7ime")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+_is_inverted = true
+
+[node name="PressurePlate3" parent="GridMap/Door/Row1" instance=ExtResource("2_j7ime")]
+_is_inverted = true
+
+[node name="PressurePlate4" parent="GridMap/Door/Row1" instance=ExtResource("2_j7ime")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="PressurePlate5" parent="GridMap/Door/Row1" instance=ExtResource("2_j7ime")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+_is_inverted = true
+
+[node name="Row2" type="Node3D" parent="GridMap/Door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 8)
+
+[node name="PressurePlate" parent="GridMap/Door/Row2" instance=ExtResource("2_j7ime")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="PressurePlate2" parent="GridMap/Door/Row2" instance=ExtResource("2_j7ime")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+_is_inverted = true
+
+[node name="PressurePlate3" parent="GridMap/Door/Row2" instance=ExtResource("2_j7ime")]
+_is_inverted = true
+
+[node name="PressurePlate4" parent="GridMap/Door/Row2" instance=ExtResource("2_j7ime")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+_is_inverted = true
+
+[node name="PressurePlate5" parent="GridMap/Door/Row2" instance=ExtResource("2_j7ime")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="Row3" type="Node3D" parent="GridMap/Door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 10)
+
+[node name="PressurePlate" parent="GridMap/Door/Row3" instance=ExtResource("2_j7ime")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+_is_inverted = true
+
+[node name="PressurePlate2" parent="GridMap/Door/Row3" instance=ExtResource("2_j7ime")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+_is_inverted = true
+
+[node name="PressurePlate3" parent="GridMap/Door/Row3" instance=ExtResource("2_j7ime")]
+_is_inverted = true
+
+[node name="PressurePlate4" parent="GridMap/Door/Row3" instance=ExtResource("2_j7ime")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+_is_inverted = true
+
+[node name="PressurePlate5" parent="GridMap/Door/Row3" instance=ExtResource("2_j7ime")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+_is_inverted = true
+
+[node name="Row4" type="Node3D" parent="GridMap/Door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 12)
+
+[node name="PressurePlate" parent="GridMap/Door/Row4" instance=ExtResource("2_j7ime")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+_is_inverted = true
+
+[node name="PressurePlate2" parent="GridMap/Door/Row4" instance=ExtResource("2_j7ime")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+_is_inverted = true
+
+[node name="PressurePlate3" parent="GridMap/Door/Row4" instance=ExtResource("2_j7ime")]
+_is_inverted = true
+
+[node name="PressurePlate4" parent="GridMap/Door/Row4" instance=ExtResource("2_j7ime")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+_is_inverted = true
+
+[node name="PressurePlate5" parent="GridMap/Door/Row4" instance=ExtResource("2_j7ime")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+_is_inverted = true
+
+[node name="Row5" type="Node3D" parent="GridMap/Door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 14)
+
+[node name="PressurePlate" parent="GridMap/Door/Row5" instance=ExtResource("2_j7ime")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+_is_inverted = true
+
+[node name="PressurePlate2" parent="GridMap/Door/Row5" instance=ExtResource("2_j7ime")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="PressurePlate3" parent="GridMap/Door/Row5" instance=ExtResource("2_j7ime")]
+_is_inverted = true
+
+[node name="PressurePlate4" parent="GridMap/Door/Row5" instance=ExtResource("2_j7ime")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+_is_inverted = true
+
+[node name="PressurePlate5" parent="GridMap/Door/Row5" instance=ExtResource("2_j7ime")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+_is_inverted = true
 
 [node name="Room_R" type="Node3D" parent="."]
 
@@ -148,6 +179,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.78231, 4, -14.5548)
 
 [node name="TreeProp2" parent="." instance=ExtResource("8_hs0fo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.26814, 4, 4.86406)
-
-[node name="Checkpoint" parent="." instance=ExtResource("9_rky4h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.985197, 4, -2.26125)
