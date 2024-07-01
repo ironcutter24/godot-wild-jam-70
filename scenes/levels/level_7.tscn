@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dg71yrymk35jv"]
+[gd_scene load_steps=11 format=3 uid="uid://dg71yrymk35jv"]
 
 [ext_resource type="MeshLibrary" uid="uid://btegh8u6en8b0" path="res://MeshLibrary.tres" id="1_smd4t"]
 [ext_resource type="PackedScene" uid="uid://4ywa83djv3v7" path="res://scenes/door.tscn" id="2_nnkds"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b2org6ok0p0xb" path="res://scenes/player_start.tscn" id="3_cqc5q"]
 [ext_resource type="PackedScene" uid="uid://cnbkg0vx6gr74" path="res://scenes/traps/ground_spikes.tscn" id="5_wd21w"]
 [ext_resource type="PackedScene" uid="uid://caaidcaxd2nfe" path="res://scenes/pressure_plate.tscn" id="6_4tobf"]
+[ext_resource type="PackedScene" uid="uid://bdyvqc84dxfj4" path="res://scenes/pressure_plate_stay_pressed.tscn" id="6_mbv72"]
 [ext_resource type="PackedScene" uid="uid://b8rruq6x2e3cv" path="res://scenes/checkpoint.tscn" id="7_ta0ue"]
 [ext_resource type="PackedScene" uid="uid://di7qbbea0x658" path="res://scenes/next_level_volume.tscn" id="8_t80pl"]
 [ext_resource type="PackedScene" uid="uid://set3rufnpnae" path="res://scenes/tree_prop.tscn" id="9_62yqt"]
@@ -28,7 +29,7 @@ _pressure_plates = [NodePath("../PressurePlate3"), NodePath("../PressurePlate4")
 
 [node name="Door2" parent="GridMap" node_paths=PackedStringArray("_pressure_plates") instance=ExtResource("2_nnkds")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20.8889, 4, -22.0283)
-_pressure_plates = [NodePath("../PressurePlate"), NodePath("../PressurePlate2")]
+_pressure_plates = [NodePath("../PressurePlateStayPressed"), NodePath("../PressurePlate2")]
 
 [node name="PlayerStart" parent="GridMap" instance=ExtResource("3_cqc5q")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.876359, 3.90757, -21.6042)
@@ -36,7 +37,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.8763
 [node name="GroundSpikes" parent="GridMap" instance=ExtResource("5_wd21w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, -41)
 
-[node name="PressurePlate" parent="GridMap" instance=ExtResource("6_4tobf")]
+[node name="PressurePlateStayPressed" parent="GridMap" instance=ExtResource("6_mbv72")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 10, -39)
 
 [node name="PressurePlate2" parent="GridMap" instance=ExtResource("6_4tobf")]
@@ -49,10 +50,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2, 15)
 
 [node name="PressurePlate5" parent="GridMap" instance=ExtResource("6_4tobf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 1)
 
 [node name="PressurePlate6" parent="GridMap" instance=ExtResource("6_4tobf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9938, 0.00699377, 8.99326)
 
 [node name="GroundSpikes5" parent="GridMap" instance=ExtResource("5_wd21w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 7)
@@ -73,7 +74,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3, 2,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3492, 0, 13.2845)
 
 [node name="TreeProp3" parent="." instance=ExtResource("9_62yqt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.93, 9.53674e-07, 4.9089)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.93, 9.53674e-07, 6.9089)
 
 [node name="TreeProp4" parent="." instance=ExtResource("9_62yqt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.989, 0, -2.90404)
