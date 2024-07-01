@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdyvqc84dxfj4"]
+
+[ext_resource type="PackedScene" uid="uid://caaidcaxd2nfe" path="res://scenes/pressure_plate.tscn" id="1_m61hi"]
+[ext_resource type="Script" path="res://scripts/PressurePlateStayPressed.gd" id="2_r6abv"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_rb5ei"]
+size = Vector3(0.4, 1, 0.4)
+
+[node name="PressurePlateStayPressed" instance=ExtResource("1_m61hi")]
+script = ExtResource("2_r6abv")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="4"]
+mesh = SubResource("BoxMesh_rb5ei")
