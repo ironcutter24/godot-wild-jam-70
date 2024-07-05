@@ -1,7 +1,7 @@
 extends Node3D
 
 
-const RAY_LENGTH = 100.0;
+const RAY_LENGTH = 1000.0;
 
 var hovered_interactive : MouseInteractive = null
 
@@ -11,11 +11,9 @@ func _unhandled_input(event) -> void:
 	var mouse_right = event.is_action_pressed("mouse_right")
 	
 	var hit = cast_ray_from_mouse_pointer()
-	
 	if hit:
-		var collider = hit["collider"]
-		
 		var node
+		var collider = hit["collider"]
 		if collider is MouseInteractive:
 			node = collider
 		elif collider.owner is MouseInteractive:

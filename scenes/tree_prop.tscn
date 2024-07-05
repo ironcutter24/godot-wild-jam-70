@@ -9,7 +9,6 @@ height = 4.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fj553"]
 resource_name = "tree_leaves_mat"
-cull_mode = 2
 albedo_color = Color(0.637843, 0.637843, 0.637843, 1)
 albedo_texture = ExtResource("1_7q1vl")
 metallic_specular = 0.0
@@ -17,7 +16,6 @@ roughness = 0.8
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8knrl"]
 resource_name = "tree_trunk_mat"
-cull_mode = 2
 albedo_texture = ExtResource("2_d8m1r")
 metallic_specular = 0.0
 

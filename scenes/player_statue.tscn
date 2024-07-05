@@ -10,13 +10,11 @@ radius = 0.4
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lf85x"]
 resource_name = "knight_statue_mat"
-cull_mode = 2
 albedo_texture = ExtResource("3_n0nx0")
 roughness = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_51mn8"]
 resource_name = "knight_sword_mat"
-cull_mode = 2
 albedo_texture = ExtResource("4_8hg1d")
 roughness = 0.0
 

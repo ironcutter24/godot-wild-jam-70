@@ -4,7 +4,6 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iirbs"]
 resource_name = "StoneBright"
-cull_mode = 2
 albedo_texture = ExtResource("1_n68ni")
 roughness = 0.5
 

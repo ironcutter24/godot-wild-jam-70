@@ -4,7 +4,6 @@
 
 [resource]
 resource_name = "knight_color_mat"
-cull_mode = 2
 albedo_color = Color(1, 0, 0, 1)
 albedo_texture = ExtResource("1_sua6o")
 metallic = 0.4

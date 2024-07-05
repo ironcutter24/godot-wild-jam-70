@@ -4,7 +4,6 @@
 
 [resource]
 resource_name = "knight_body_mat"
-cull_mode = 2
 albedo_texture = ExtResource("1_cgoui")
 metallic = 0.6
 metallic_specular = 0.0
