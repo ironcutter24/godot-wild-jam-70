@@ -6,4 +6,3 @@
 resource_name = "StoneBright"
 albedo_color = Color(0.82, 0.82, 0.82, 1)
 albedo_texture = ExtResource("1_5q7ck")
-roughness = 0.5
