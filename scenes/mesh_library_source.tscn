@@ -16,11 +16,13 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0i8vu"]
 resource_name = "Stone"
 albedo_texture = ExtResource("6_vfr1x")
+metallic_specular = 0.0
 roughness = 0.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_su5d3"]
 resource_name = "Grass"
 albedo_texture = ExtResource("7_m6qqc")
+metallic_specular = 0.0
 roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_m6tns"]

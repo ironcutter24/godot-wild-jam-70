@@ -4,7 +4,6 @@
 
 [resource]
 resource_name = "Gold"
-cull_mode = 2
 albedo_texture = ExtResource("1_aqyrj")
 metallic = 0.9
 roughness = 0.5

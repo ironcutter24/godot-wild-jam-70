@@ -5,14 +5,12 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5uhe6"]
 resource_name = "Gold"
-cull_mode = 2
 albedo_texture = ExtResource("1_a5skc")
 metallic = 0.9
 roughness = 0.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g6s3i"]
 resource_name = "Spikes"
-cull_mode = 2
 albedo_texture = ExtResource("2_ed4lv")
 metallic = 0.9
 roughness = 0.5
