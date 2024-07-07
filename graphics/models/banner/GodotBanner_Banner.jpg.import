@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bbpq0sqhrdye6"
+path.s3tc="res://.godot/imported/GodotBanner_Banner.jpg-6c2a2f2cf224372586fb9efc916f878f.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "dbb7519e48d40c46e383837e154e36dc"
+}
+
+[deps]
+
+source_file="res://graphics/models/banner/GodotBanner_Banner.jpg"
+dest_files=["res://.godot/imported/GodotBanner_Banner.jpg-6c2a2f2cf224372586fb9efc916f878f.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
