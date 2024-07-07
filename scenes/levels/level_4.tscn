@@ -1,14 +1,14 @@
 [gd_scene load_steps=10 format=3 uid="uid://bk8xkscjpsyqg"]
 
 [ext_resource type="MeshLibrary" uid="uid://btegh8u6en8b0" path="res://MeshLibrary.tres" id="1_vuedb"]
-[ext_resource type="PackedScene" uid="uid://bi0g6ucd6o5lq" path="res://scenes/traps/arrow_launcher.tscn" id="2_6q5ru"]
-[ext_resource type="PackedScene" uid="uid://di7qbbea0x658" path="res://scenes/next_level_volume.tscn" id="2_k5a6f"]
-[ext_resource type="PackedScene" uid="uid://b2org6ok0p0xb" path="res://scenes/player_start.tscn" id="3_6nkhg"]
-[ext_resource type="PackedScene" uid="uid://caaidcaxd2nfe" path="res://scenes/pressure_plate.tscn" id="4_y31f8"]
-[ext_resource type="PackedScene" uid="uid://4ywa83djv3v7" path="res://scenes/door.tscn" id="5_7cyga"]
-[ext_resource type="PackedScene" uid="uid://bdyvqc84dxfj4" path="res://scenes/pressure_plate_stay_pressed.tscn" id="6_1uwjl"]
-[ext_resource type="PackedScene" uid="uid://b8rruq6x2e3cv" path="res://scenes/checkpoint.tscn" id="6_3xn4a"]
-[ext_resource type="PackedScene" uid="uid://set3rufnpnae" path="res://scenes/tree_prop.tscn" id="7_w56fa"]
+[ext_resource type="PackedScene" uid="uid://bi0g6ucd6o5lq" path="res://scenes/prog_tools/arrow_launcher.tscn" id="2_6q5ru"]
+[ext_resource type="PackedScene" uid="uid://di7qbbea0x658" path="res://scenes/prog_tools/next_level_volume.tscn" id="2_k5a6f"]
+[ext_resource type="PackedScene" uid="uid://b2org6ok0p0xb" path="res://scenes/prog_tools/player_start.tscn" id="3_6nkhg"]
+[ext_resource type="PackedScene" uid="uid://caaidcaxd2nfe" path="res://scenes/prog_tools/pressure_plate.tscn" id="4_y31f8"]
+[ext_resource type="PackedScene" uid="uid://4ywa83djv3v7" path="res://scenes/prog_tools/door.tscn" id="5_7cyga"]
+[ext_resource type="PackedScene" uid="uid://bdyvqc84dxfj4" path="res://scenes/prog_tools/pressure_plate_stay_pressed.tscn" id="6_1uwjl"]
+[ext_resource type="PackedScene" uid="uid://b8rruq6x2e3cv" path="res://scenes/prog_tools/checkpoint.tscn" id="6_3xn4a"]
+[ext_resource type="PackedScene" uid="uid://set3rufnpnae" path="res://scenes/props/tree_prop.tscn" id="7_w56fa"]
 
 [node name="Level_4" type="Node3D"]
 

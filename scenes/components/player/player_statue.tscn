@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://cvx8s6ovc561d"]
 
 [ext_resource type="Script" path="res://scripts/PlayerStatue.gd" id="1_fpek2"]
-[ext_resource type="PackedScene" uid="uid://b6sl5tjcaux2p" path="res://scenes/player_broken_statue.tscn" id="2_j7cst"]
+[ext_resource type="PackedScene" uid="uid://b6sl5tjcaux2p" path="res://scenes/components/player/player_broken_statue.tscn" id="2_j7cst"]
 [ext_resource type="Texture2D" uid="uid://cf0h1w3v46pkn" path="res://graphics/models/knight/StatuePose_04_GoldTexture.jpg" id="3_n0nx0"]
 [ext_resource type="Texture2D" uid="uid://ckbo1kn64c24s" path="res://graphics/models/knight/StatuePose_04_Brushed-Metal-Texture.jpg" id="4_8hg1d"]
 

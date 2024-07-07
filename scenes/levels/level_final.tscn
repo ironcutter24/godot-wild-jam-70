@@ -1,14 +1,14 @@
 [gd_scene load_steps=10 format=3 uid="uid://cxtexa8gwpe6"]
 
 [ext_resource type="MeshLibrary" uid="uid://btegh8u6en8b0" path="res://MeshLibrary.tres" id="1_2bk1d"]
-[ext_resource type="PackedScene" uid="uid://caaidcaxd2nfe" path="res://scenes/pressure_plate.tscn" id="2_mw584"]
-[ext_resource type="PackedScene" uid="uid://dm5ccvgw8fdot" path="res://scenes/traps/flame_thrower.tscn" id="3_c7hcv"]
-[ext_resource type="PackedScene" uid="uid://cnbkg0vx6gr74" path="res://scenes/traps/ground_spikes.tscn" id="4_6s4op"]
-[ext_resource type="PackedScene" uid="uid://bi0g6ucd6o5lq" path="res://scenes/traps/arrow_launcher.tscn" id="5_ri3xq"]
-[ext_resource type="PackedScene" uid="uid://4ywa83djv3v7" path="res://scenes/door.tscn" id="6_vrg6b"]
-[ext_resource type="PackedScene" uid="uid://b2org6ok0p0xb" path="res://scenes/player_start.tscn" id="7_64cex"]
-[ext_resource type="PackedScene" uid="uid://b1sdcrgaspo0t" path="res://scenes/golden_idol.tscn" id="8_n5u2g"]
-[ext_resource type="PackedScene" uid="uid://di7qbbea0x658" path="res://scenes/next_level_volume.tscn" id="9_pyoyg"]
+[ext_resource type="PackedScene" uid="uid://caaidcaxd2nfe" path="res://scenes/prog_tools/pressure_plate.tscn" id="2_mw584"]
+[ext_resource type="PackedScene" uid="uid://dm5ccvgw8fdot" path="res://scenes/prog_tools/flame_thrower.tscn" id="3_c7hcv"]
+[ext_resource type="PackedScene" uid="uid://cnbkg0vx6gr74" path="res://scenes/prog_tools/ground_spikes.tscn" id="4_6s4op"]
+[ext_resource type="PackedScene" uid="uid://bi0g6ucd6o5lq" path="res://scenes/prog_tools/arrow_launcher.tscn" id="5_ri3xq"]
+[ext_resource type="PackedScene" uid="uid://4ywa83djv3v7" path="res://scenes/prog_tools/door.tscn" id="6_vrg6b"]
+[ext_resource type="PackedScene" uid="uid://b2org6ok0p0xb" path="res://scenes/prog_tools/player_start.tscn" id="7_64cex"]
+[ext_resource type="PackedScene" uid="uid://b1sdcrgaspo0t" path="res://scenes/props/golden_idol.tscn" id="8_n5u2g"]
+[ext_resource type="PackedScene" uid="uid://di7qbbea0x658" path="res://scenes/prog_tools/next_level_volume.tscn" id="9_pyoyg"]
 
 [node name="level_final" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.039938, 0.0139999, 0)

@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://0pyuh8ijs0lk"]
 
-[ext_resource type="Texture2D" uid="uid://bbpq0sqhrdye6" path="res://graphics/models/banner/GodotBanner_Banner.jpg" id="1_wpd71"]
+[ext_resource type="Texture2D" uid="uid://bbpq0sqhrdye6" path="res://graphics/models/banner/GodotBanner_Banner.jpg" id="1_4xuiu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6cjge"]
 resource_name = "banner_mat"
 cull_mode = 2
-albedo_texture = ExtResource("1_wpd71")
+albedo_texture = ExtResource("1_4xuiu")
 roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_5e5ed"]

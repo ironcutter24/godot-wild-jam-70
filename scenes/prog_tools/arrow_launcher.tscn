@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://bi0g6ucd6o5lq"]
 
 [ext_resource type="Script" path="res://scripts/ArrowLauncher.gd" id="1_wwwwh"]
-[ext_resource type="PackedScene" uid="uid://x6p17kdqtgye" path="res://scenes/traps/arrow_projectile.tscn" id="2_4517v"]
+[ext_resource type="PackedScene" uid="uid://x6p17kdqtgye" path="res://scenes/components/arrow_projectile.tscn" id="2_4517v"]
 [ext_resource type="Texture2D" uid="uid://de3whohgl826" path="res://graphics/models/packed_meshes_StoneToon2.jpg" id="3_exbh6"]
 [ext_resource type="Material" uid="uid://bqy8dtmeqlksb" path="res://graphics/materials/solid_gold_mat.tres" id="3_oabn5"]
 [ext_resource type="AudioStream" uid="uid://b4av6h622enrr" path="res://audio/arrow_launcher/Throwing Knife (Thrown) 5.wav" id="5_xd2or"]

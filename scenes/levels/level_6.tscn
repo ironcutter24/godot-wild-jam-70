@@ -1,14 +1,14 @@
 [gd_scene load_steps=10 format=3 uid="uid://cvophgxv2tlqa"]
 
 [ext_resource type="MeshLibrary" uid="uid://btegh8u6en8b0" path="res://MeshLibrary.tres" id="1_ieffm"]
-[ext_resource type="PackedScene" uid="uid://b2org6ok0p0xb" path="res://scenes/player_start.tscn" id="2_mahsy"]
-[ext_resource type="PackedScene" uid="uid://bi0g6ucd6o5lq" path="res://scenes/traps/arrow_launcher.tscn" id="3_tgvy0"]
-[ext_resource type="PackedScene" uid="uid://cnbkg0vx6gr74" path="res://scenes/traps/ground_spikes.tscn" id="4_in8xk"]
-[ext_resource type="PackedScene" uid="uid://caaidcaxd2nfe" path="res://scenes/pressure_plate.tscn" id="5_vx2qx"]
-[ext_resource type="PackedScene" uid="uid://4ywa83djv3v7" path="res://scenes/door.tscn" id="6_ar55l"]
-[ext_resource type="PackedScene" uid="uid://set3rufnpnae" path="res://scenes/tree_prop.tscn" id="7_0yvg5"]
-[ext_resource type="PackedScene" uid="uid://b8rruq6x2e3cv" path="res://scenes/checkpoint.tscn" id="8_jmjsp"]
-[ext_resource type="PackedScene" uid="uid://di7qbbea0x658" path="res://scenes/next_level_volume.tscn" id="9_837id"]
+[ext_resource type="PackedScene" uid="uid://b2org6ok0p0xb" path="res://scenes/prog_tools/player_start.tscn" id="2_mahsy"]
+[ext_resource type="PackedScene" uid="uid://bi0g6ucd6o5lq" path="res://scenes/prog_tools/arrow_launcher.tscn" id="3_tgvy0"]
+[ext_resource type="PackedScene" uid="uid://cnbkg0vx6gr74" path="res://scenes/prog_tools/ground_spikes.tscn" id="4_in8xk"]
+[ext_resource type="PackedScene" uid="uid://caaidcaxd2nfe" path="res://scenes/prog_tools/pressure_plate.tscn" id="5_vx2qx"]
+[ext_resource type="PackedScene" uid="uid://4ywa83djv3v7" path="res://scenes/prog_tools/door.tscn" id="6_ar55l"]
+[ext_resource type="PackedScene" uid="uid://set3rufnpnae" path="res://scenes/props/tree_prop.tscn" id="7_0yvg5"]
+[ext_resource type="PackedScene" uid="uid://b8rruq6x2e3cv" path="res://scenes/prog_tools/checkpoint.tscn" id="8_jmjsp"]
+[ext_resource type="PackedScene" uid="uid://di7qbbea0x658" path="res://scenes/prog_tools/next_level_volume.tscn" id="9_837id"]
 
 [node name="Level_6" type="Node3D"]
 

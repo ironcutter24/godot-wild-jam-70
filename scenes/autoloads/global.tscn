@@ -7,7 +7,7 @@
 
 [node name="Global" type="Node" node_paths=PackedStringArray("Audio")]
 script = ExtResource("1_hkxrf")
-_level_list = Array[String](["res://scenes/persistent/splash_screen.tscn", "res://scenes/persistent/intro_scene.tscn", "res://scenes/levels/level_1.tscn", "res://scenes/levels/level_2.tscn", "res://scenes/levels/level_4.tscn", "res://scenes/levels/level_5.tscn", "res://scenes/levels/level_3.tscn", "res://scenes/levels/level_6.tscn", "res://scenes/levels/level_7.tscn", "res://scenes/levels/level_8.tscn", "res://scenes/levels/level_final.tscn"])
+_level_list = Array[String](["res://scenes/levels/start/splash_screen.tscn", "res://scenes/levels/start/intro_scene.tscn", "res://scenes/levels/level_1.tscn", "res://scenes/levels/level_2.tscn", "res://scenes/levels/level_4.tscn", "res://scenes/levels/level_5.tscn", "res://scenes/levels/level_3.tscn", "res://scenes/levels/level_6.tscn", "res://scenes/levels/level_7.tscn", "res://scenes/levels/level_8.tscn", "res://scenes/levels/level_final.tscn"])
 Audio = NodePath("AudioManager")
 _outline_mat = ExtResource("2_7y8v6")
 

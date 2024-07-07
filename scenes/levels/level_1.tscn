@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://dc15qd5cfq6nb"]
 
 [ext_resource type="MeshLibrary" uid="uid://btegh8u6en8b0" path="res://MeshLibrary.tres" id="1_py35e"]
-[ext_resource type="PackedScene" uid="uid://cnbkg0vx6gr74" path="res://scenes/traps/ground_spikes.tscn" id="2_7hth6"]
-[ext_resource type="PackedScene" uid="uid://b2org6ok0p0xb" path="res://scenes/player_start.tscn" id="2_nvv8b"]
-[ext_resource type="PackedScene" uid="uid://4ywa83djv3v7" path="res://scenes/door.tscn" id="4_u7lby"]
-[ext_resource type="PackedScene" uid="uid://set3rufnpnae" path="res://scenes/tree_prop.tscn" id="5_30ino"]
-[ext_resource type="PackedScene" uid="uid://bdyvqc84dxfj4" path="res://scenes/pressure_plate_stay_pressed.tscn" id="6_frfnn"]
-[ext_resource type="PackedScene" uid="uid://k0eq4jy11fp0" path="res://scenes/tree_prop_bright.tscn" id="6_heknq"]
-[ext_resource type="PackedScene" uid="uid://di7qbbea0x658" path="res://scenes/next_level_volume.tscn" id="8_dk8py"]
+[ext_resource type="PackedScene" uid="uid://cnbkg0vx6gr74" path="res://scenes/prog_tools/ground_spikes.tscn" id="2_7hth6"]
+[ext_resource type="PackedScene" uid="uid://b2org6ok0p0xb" path="res://scenes/prog_tools/player_start.tscn" id="2_nvv8b"]
+[ext_resource type="PackedScene" uid="uid://4ywa83djv3v7" path="res://scenes/prog_tools/door.tscn" id="4_u7lby"]
+[ext_resource type="PackedScene" uid="uid://set3rufnpnae" path="res://scenes/props/tree_prop.tscn" id="5_30ino"]
+[ext_resource type="PackedScene" uid="uid://bdyvqc84dxfj4" path="res://scenes/prog_tools/pressure_plate_stay_pressed.tscn" id="6_frfnn"]
+[ext_resource type="PackedScene" uid="uid://k0eq4jy11fp0" path="res://scenes/props/tree_prop_bright.tscn" id="6_heknq"]
+[ext_resource type="PackedScene" uid="uid://di7qbbea0x658" path="res://scenes/prog_tools/next_level_volume.tscn" id="8_dk8py"]
 
 [node name="Livello1" type="Node3D"]
 

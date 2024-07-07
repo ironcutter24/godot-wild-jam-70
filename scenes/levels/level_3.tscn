@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://6624rn0y3tyl"]
 
 [ext_resource type="MeshLibrary" uid="uid://btegh8u6en8b0" path="res://MeshLibrary.tres" id="1_uq0t6"]
-[ext_resource type="PackedScene" uid="uid://b2org6ok0p0xb" path="res://scenes/player_start.tscn" id="2_kb833"]
-[ext_resource type="PackedScene" uid="uid://dm5ccvgw8fdot" path="res://scenes/traps/flame_thrower.tscn" id="2_su0fq"]
-[ext_resource type="PackedScene" uid="uid://cnbkg0vx6gr74" path="res://scenes/traps/ground_spikes.tscn" id="3_enlvc"]
-[ext_resource type="PackedScene" uid="uid://caaidcaxd2nfe" path="res://scenes/pressure_plate.tscn" id="4_tib8s"]
-[ext_resource type="PackedScene" uid="uid://4ywa83djv3v7" path="res://scenes/door.tscn" id="5_m6opf"]
-[ext_resource type="PackedScene" uid="uid://di7qbbea0x658" path="res://scenes/next_level_volume.tscn" id="7_jfjuy"]
+[ext_resource type="PackedScene" uid="uid://b2org6ok0p0xb" path="res://scenes/prog_tools/player_start.tscn" id="2_kb833"]
+[ext_resource type="PackedScene" uid="uid://dm5ccvgw8fdot" path="res://scenes/prog_tools/flame_thrower.tscn" id="2_su0fq"]
+[ext_resource type="PackedScene" uid="uid://cnbkg0vx6gr74" path="res://scenes/prog_tools/ground_spikes.tscn" id="3_enlvc"]
+[ext_resource type="PackedScene" uid="uid://caaidcaxd2nfe" path="res://scenes/prog_tools/pressure_plate.tscn" id="4_tib8s"]
+[ext_resource type="PackedScene" uid="uid://4ywa83djv3v7" path="res://scenes/prog_tools/door.tscn" id="5_m6opf"]
+[ext_resource type="PackedScene" uid="uid://di7qbbea0x658" path="res://scenes/prog_tools/next_level_volume.tscn" id="7_jfjuy"]
 
 [node name="Level3" type="Node3D"]
 

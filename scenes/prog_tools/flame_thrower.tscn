@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dm5ccvgw8fdot"]
 
 [ext_resource type="Script" path="res://scripts/FlameThrower.gd" id="1_tj53g"]
-[ext_resource type="PackedScene" uid="uid://c0eflj1kim651" path="res://scenes/traps/flame_particles.tscn" id="2_mat5e"]
+[ext_resource type="PackedScene" uid="uid://c0eflj1kim651" path="res://scenes/components/flame_particles.tscn" id="2_mat5e"]
 [ext_resource type="ArrayMesh" uid="uid://bqy0jmaq5d3td" path="res://graphics/models/meshes/FlameThrower.tres" id="2_r8h8h"]
 [ext_resource type="AudioStream" uid="uid://dfey4un1qqh31" path="res://audio/flame_thrower/Dragon Breath Fire.wav" id="4_d80fl"]
 [ext_resource type="AudioStream" uid="uid://cgu0ys4b3whj" path="res://audio/flame_thrower/Dragon Breath Fire_1.wav" id="5_l31l4"]

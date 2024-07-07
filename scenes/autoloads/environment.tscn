@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cb5bttx7cf8lo"]
 
-[ext_resource type="PackedScene" uid="uid://chqil7du8yor2" path="res://scenes/water.tscn" id="1_eq1g5"]
+[ext_resource type="PackedScene" uid="uid://chqil7du8yor2" path="res://scenes/components/water.tscn" id="1_eq1g5"]
 
 [sub_resource type="Environment" id="Environment_nyeiy"]
 
