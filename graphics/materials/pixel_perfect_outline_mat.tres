@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cu8so5orbasa6"]
 
-[ext_resource type="Shader" path="res://graphics/shaders/pixel_perfect_outline.gdshader" id="1_3r8bk"]
+[ext_resource type="Shader" path="res://graphics/materials/shaders/pixel_perfect_outline.gdshader" id="1_3r8bk"]
 
 [resource]
 render_priority = 0

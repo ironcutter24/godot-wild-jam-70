@@ -5,8 +5,8 @@
 [ext_resource type="AudioStream" uid="uid://vb8gja45x62i" path="res://audio/floor_spikes/Dagger woosh 3.wav" id="4_e5xt7"]
 [ext_resource type="AudioStream" uid="uid://e2ey55xrymux" path="res://audio/floor_spikes/Dagger woosh 5.wav" id="5_3lgjq"]
 [ext_resource type="AudioStream" uid="uid://b14nqjgqwewi3" path="res://audio/floor_spikes/Dagger woosh 7.wav" id="6_cg036"]
-[ext_resource type="Texture2D" uid="uid://0eacq454olas" path="res://graphics/models/SpikeTrap_01_Brushed-Metal-Texture.jpg" id="7_jwsdf"]
-[ext_resource type="Texture2D" uid="uid://cw8gqkq66b8wk" path="res://graphics/models/SpikeTrap_01_GoldTextureSpikes.jpg" id="8_daj0e"]
+[ext_resource type="Texture2D" uid="uid://0eacq454olas" path="res://graphics/models/spike_trap/SpikeTrap_01_Brushed-Metal-Texture.jpg" id="7_jwsdf"]
+[ext_resource type="Texture2D" uid="uid://cw8gqkq66b8wk" path="res://graphics/models/spike_trap/SpikeTrap_01_GoldTextureSpikes.jpg" id="8_daj0e"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4fmwf"]
 size = Vector3(2, 0.4, 2)

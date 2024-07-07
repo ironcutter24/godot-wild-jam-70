@@ -1,7 +1,7 @@
 [gd_resource type="ArrayMesh" load_steps=6 format=3 uid="uid://ceg3xgiy8rhuj"]
 
-[ext_resource type="Texture2D" uid="uid://cw8gqkq66b8wk" path="res://graphics/models/SpikeTrap_01_GoldTextureSpikes.jpg" id="1_a5skc"]
-[ext_resource type="Texture2D" uid="uid://0eacq454olas" path="res://graphics/models/SpikeTrap_01_Brushed-Metal-Texture.jpg" id="2_ed4lv"]
+[ext_resource type="Texture2D" uid="uid://cw8gqkq66b8wk" path="res://graphics/models/spike_trap/SpikeTrap_01_GoldTextureSpikes.jpg" id="1_a5skc"]
+[ext_resource type="Texture2D" uid="uid://0eacq454olas" path="res://graphics/models/spike_trap/SpikeTrap_01_Brushed-Metal-Texture.jpg" id="2_ed4lv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5uhe6"]
 resource_name = "Gold"

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://caaidcaxd2nfe" path="res://scenes/prog_tools/pressure_plate.tscn" id="1_m61hi"]
 [ext_resource type="Script" path="res://scripts/PressurePlateStayPressed.gd" id="2_r6abv"]
-[ext_resource type="Texture2D" uid="uid://bya2nf7lp38uu" path="res://graphics/models/post_jam/pressureplate_oneshot_Ashtray.jpg" id="3_ginj4"]
+[ext_resource type="Texture2D" uid="uid://bya2nf7lp38uu" path="res://graphics/models/pressure_plate/pressureplate_oneshot_Ashtray.jpg" id="3_ginj4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2jlxb"]
 resource_name = "pressureplate_oneshot_mat"

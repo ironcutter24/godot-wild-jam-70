@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://chqil7du8yor2"]
 
 [ext_resource type="Script" path="res://scripts/WaterKillBox.gd" id="1_y80fq"]
-[ext_resource type="Shader" path="res://graphics/shaders/stylized_water.gdshader" id="2_gke4r"]
+[ext_resource type="Shader" path="res://graphics/materials/shaders/stylized_water.gdshader" id="2_gke4r"]
 [ext_resource type="AudioStream" uid="uid://b32n4vkx510rt" path="res://audio/Waves Crashing on rocks.wav" id="3_cia71"]
 [ext_resource type="AudioStream" uid="uid://bor11ja35a23g" path="res://audio/water_splash.wav" id="3_n5ebf"]
 

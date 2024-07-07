@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://btu546rhhmky0"]
 
-[ext_resource type="Texture2D" uid="uid://cw8gqkq66b8wk" path="res://graphics/models/SpikeTrap_01_GoldTextureSpikes.jpg" id="1_aqyrj"]
+[ext_resource type="Texture2D" uid="uid://cw8gqkq66b8wk" path="res://graphics/models/spike_trap/SpikeTrap_01_GoldTextureSpikes.jpg" id="1_aqyrj"]
 
 [resource]
 resource_name = "Gold"

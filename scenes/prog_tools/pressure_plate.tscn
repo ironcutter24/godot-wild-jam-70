@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://caaidcaxd2nfe"]
 
 [ext_resource type="Script" path="res://scripts/PressurePlate.gd" id="1_ol05y"]
-[ext_resource type="Texture2D" uid="uid://dpyp2uvi4njcn" path="res://graphics/models/Pressureplate_MetalTexture.jpg" id="2_hkxys"]
+[ext_resource type="Texture2D" uid="uid://dpyp2uvi4njcn" path="res://graphics/models/pressure_plate/Pressureplate_MetalTexture.jpg" id="2_hkxys"]
 [ext_resource type="AudioStream" uid="uid://ddpxucu8gwrgk" path="res://audio/pressure_plate/Drawing Bow Backwards 7_Reverse_Fade In.wav" id="3_uqpig"]
 [ext_resource type="AudioStream" uid="uid://ccd86dylgc5td" path="res://audio/pressure_plate/Drawing Bow Backwards 7_Fade Out.wav" id="4_u62ok"]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://b8rruq6x2e3cv"]
 
 [ext_resource type="Script" path="res://scripts/Checkpoint.gd" id="1_scg08"]
-[ext_resource type="Texture2D" uid="uid://dgdu0ymqj8juv" path="res://graphics/models/GodotCheckpoint_01_Checkpoint_mat.jpg" id="2_7nyrq"]
+[ext_resource type="Texture2D" uid="uid://dgdu0ymqj8juv" path="res://graphics/models/checkpoint/GodotCheckpoint_01_Checkpoint_mat.jpg" id="2_7nyrq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vppy6"]
 resource_name = "checkpoint_mat"

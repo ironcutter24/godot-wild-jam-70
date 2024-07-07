@@ -7,11 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://deybo5mf7ct7l" path="res://scenes/components/tile_stairs_body.tscn" id="4_ay473"]
 [ext_resource type="ArrayMesh" uid="uid://dvjsk2ow38qte" path="res://graphics/models/meshes/BlockStone.tres" id="5_lldm3"]
 [ext_resource type="Material" uid="uid://4qmcjs0emr8g" path="res://graphics/materials/stone_blocks_mat.tres" id="6_ie2pc"]
-[ext_resource type="Texture2D" uid="uid://bd702wjk4kwng" path="res://graphics/models/GroundBlock_2_GrassToonText2.jpg" id="7_m6qqc"]
-[ext_resource type="Texture2D" uid="uid://nlaq3ykd4tnn" path="res://graphics/models/Woodblock_toonparquet.jpg" id="9_0w8gb"]
-[ext_resource type="Texture2D" uid="uid://s7rosabbf3ja" path="res://graphics/models/post_jam/GodotBlockDecorated_DecoratedStoneblock.jpg" id="11_0ohex"]
-[ext_resource type="Texture2D" uid="uid://ct0ulfu0cvlvk" path="res://graphics/models/post_jam/GodotBlockDecorated_MtallicMap.jpg" id="11_bns8r"]
-[ext_resource type="Texture2D" uid="uid://dkv16e6cd6rk7" path="res://graphics/models/post_jam/Lianas_HeightStoneblock.jpg" id="12_wkm7j"]
+[ext_resource type="Texture2D" uid="uid://bd702wjk4kwng" path="res://graphics/models/tiles/block_grass/GroundBlock_2_GrassToonText2.jpg" id="7_m6qqc"]
+[ext_resource type="Texture2D" uid="uid://nlaq3ykd4tnn" path="res://graphics/models/tiles/block_wood/Woodblock_toonparquet.jpg" id="9_0w8gb"]
+[ext_resource type="Texture2D" uid="uid://s7rosabbf3ja" path="res://graphics/models/tiles/block_gold/GodotBlockDecorated_DecoratedStoneblock.jpg" id="11_0ohex"]
+[ext_resource type="Texture2D" uid="uid://ct0ulfu0cvlvk" path="res://graphics/models/tiles/block_gold/GodotBlockDecorated_MtallicMap.jpg" id="11_bns8r"]
+[ext_resource type="Texture2D" uid="uid://dkv16e6cd6rk7" path="res://graphics/models/tiles/block_lianas/Lianas_HeightStoneblock.jpg" id="12_wkm7j"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_su5d3"]
 resource_name = "Grass"

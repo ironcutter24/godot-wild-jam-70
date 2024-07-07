@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b6sl5tjcaux2p"]
 
-[ext_resource type="Texture2D" uid="uid://bklfywwdfyxac" path="res://graphics/models/post_jam/StatueDebris_GoldTexture.jpg" id="2_osqk8"]
+[ext_resource type="Texture2D" uid="uid://bklfywwdfyxac" path="res://graphics/models/knight/StatueDebris_GoldTexture.jpg" id="2_osqk8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8u0oh"]
 resource_name = "statuedebris_mat"

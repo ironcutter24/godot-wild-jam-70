@@ -1,8 +1,8 @@
 [gd_resource type="ArrayMesh" load_steps=8 format=3 uid="uid://bqy0jmaq5d3td"]
 
-[ext_resource type="Texture2D" uid="uid://dq73k7u1m22op" path="res://graphics/models/FireTrap_02_StoneText.jpg" id="1_bwxel"]
+[ext_resource type="Texture2D" uid="uid://dq73k7u1m22op" path="res://graphics/models/fire_trap/FireTrap_02_StoneText.jpg" id="1_bwxel"]
 [ext_resource type="Material" uid="uid://bqy8dtmeqlksb" path="res://graphics/materials/solid_gold_mat.tres" id="1_sose0"]
-[ext_resource type="Texture2D" uid="uid://c8a58bmvk3duo" path="res://graphics/models/FireTrap_02_GiadeTexture.jpg" id="2_rwnm8"]
+[ext_resource type="Texture2D" uid="uid://c8a58bmvk3duo" path="res://graphics/models/fire_trap/FireTrap_02_GiadeTexture.jpg" id="2_rwnm8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jf5yx"]
 resource_name = "firetrap_stone_mat"

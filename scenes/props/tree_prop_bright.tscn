@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://k0eq4jy11fp0"]
 
-[ext_resource type="Texture2D" uid="uid://drbxj0tq50n31" path="res://graphics/models/Tree_leavestoon02.jpg" id="1_ng0po"]
-[ext_resource type="Texture2D" uid="uid://d2amnfesbvicg" path="res://graphics/models/Tree_toonbark01.jpg" id="2_gspch"]
+[ext_resource type="Texture2D" uid="uid://drbxj0tq50n31" path="res://graphics/models/tree_prop/Tree_leavestoon02.jpg" id="1_ng0po"]
+[ext_resource type="Texture2D" uid="uid://d2amnfesbvicg" path="res://graphics/models/tree_prop/Tree_toonbark01.jpg" id="2_gspch"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ba42j"]
 radius = 0.8
