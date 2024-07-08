@@ -21,6 +21,7 @@ func is_pressed() -> bool:
 		return _is_pressed
 
 
+# Override in inherited class
 func _can_be_released() -> bool:
 	return true
 

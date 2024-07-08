@@ -60,6 +60,10 @@ func spawn_statue_at(pos: Vector3, rot: Vector3):
 
 
 func spawn_and_possess_character(delay: float = 0.0):
+	
+	if Global.is_game_over():
+		return
+	
 	await get_tree().create_timer(delay).timeout
 	
 	player = player_scene.instantiate()

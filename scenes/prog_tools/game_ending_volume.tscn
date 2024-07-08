@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://fqv4g4wawccy"]
+
+[ext_resource type="Script" path="res://scripts/GameEndingVolume.gd" id="1_njfn1"]
+[ext_resource type="Material" uid="uid://bxlegyrftxm3f" path="res://graphics/materials/player_start_mat.tres" id="2_ueo02"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0wwfs"]
+size = Vector3(1.5, 8, 1.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7og45"]
+material = ExtResource("2_ueo02")
+size = Vector3(1.5, 8, 1.5)
+
+[node name="GameEndingVolume" type="Area3D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_njfn1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+shape = SubResource("BoxShape3D_0wwfs")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+mesh = SubResource("BoxMesh_7og45")
+skeleton = NodePath("")

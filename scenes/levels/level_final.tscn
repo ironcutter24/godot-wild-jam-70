@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://4ywa83djv3v7" path="res://scenes/prog_tools/door.tscn" id="6_vrg6b"]
 [ext_resource type="PackedScene" uid="uid://b2org6ok0p0xb" path="res://scenes/prog_tools/player_start.tscn" id="7_64cex"]
 [ext_resource type="PackedScene" uid="uid://b1sdcrgaspo0t" path="res://scenes/props/golden_idol.tscn" id="8_n5u2g"]
-[ext_resource type="PackedScene" uid="uid://di7qbbea0x658" path="res://scenes/prog_tools/next_level_volume.tscn" id="9_pyoyg"]
+[ext_resource type="PackedScene" uid="uid://fqv4g4wawccy" path="res://scenes/prog_tools/game_ending_volume.tscn" id="9_jo8nk"]
 
 [node name="level_final" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.039938, 0.0139999, 0)
@@ -93,8 +93,8 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, -1, 0)
 
-[node name="NextLevelVolume" parent="GridMap (Ending)" instance=ExtResource("9_pyoyg")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.04101, 4, -16.297)
+[node name="GameEndingVolume" parent="GridMap (Ending)" instance=ExtResource("9_jo8nk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.960062, 3.986, -15)
 
 [node name="Door" parent="GridMap (Ending)" node_paths=PackedStringArray("_pressure_plates") instance=ExtResource("6_vrg6b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.06219, 0, -3)
