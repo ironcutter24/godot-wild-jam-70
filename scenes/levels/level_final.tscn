@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cxtexa8gwpe6"]
+[gd_scene load_steps=11 format=3 uid="uid://cxtexa8gwpe6"]
 
 [ext_resource type="MeshLibrary" uid="uid://btegh8u6en8b0" path="res://MeshLibrary.tres" id="1_2bk1d"]
 [ext_resource type="PackedScene" uid="uid://caaidcaxd2nfe" path="res://scenes/prog_tools/pressure_plate.tscn" id="2_mw584"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b2org6ok0p0xb" path="res://scenes/prog_tools/player_start.tscn" id="7_64cex"]
 [ext_resource type="PackedScene" uid="uid://b1sdcrgaspo0t" path="res://scenes/props/golden_idol.tscn" id="8_n5u2g"]
 [ext_resource type="PackedScene" uid="uid://fqv4g4wawccy" path="res://scenes/prog_tools/game_ending_volume.tscn" id="9_jo8nk"]
+[ext_resource type="PackedScene" uid="uid://0pyuh8ijs0lk" path="res://scenes/props/banner.tscn" id="10_kqkja"]
 
 [node name="level_final" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.039938, 0.0139999, 0)
@@ -103,8 +104,25 @@ _pressure_plates = [NodePath("../../GridMap (Puzzle)/PressurePlates/PressurePlat
 [node name="GroundSpikes" parent="GridMap (Ending)" instance=ExtResource("4_6s4op")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, -13)
 
-[node name="GoldenIdol" parent="GridMap (Ending)" instance=ExtResource("8_n5u2g")]
+[node name="Props" type="Node3D" parent="GridMap (Ending)"]
+
+[node name="GoldenIdol" parent="GridMap (Ending)/Props" instance=ExtResource("8_n5u2g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 4, -15)
 
-[node name="GoldenIdol2" parent="GridMap (Ending)" instance=ExtResource("8_n5u2g")]
+[node name="GoldenIdol2" parent="GridMap (Ending)/Props" instance=ExtResource("8_n5u2g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 4, -15)
+
+[node name="BannerProp" parent="GridMap (Ending)/Props" instance=ExtResource("10_kqkja")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 3, -2)
+
+[node name="BannerProp2" parent="GridMap (Ending)/Props" instance=ExtResource("10_kqkja")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3, -2)
+
+[node name="BannerProp3" parent="GridMap (Ending)/Props" instance=ExtResource("10_kqkja")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 6, -16)
+
+[node name="BannerProp4" parent="GridMap (Ending)/Props" instance=ExtResource("10_kqkja")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 6, -16)
+
+[node name="BannerProp5" parent="GridMap (Ending)/Props" instance=ExtResource("10_kqkja")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 6, -16)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://6624rn0y3tyl"]
+[gd_scene load_steps=9 format=3 uid="uid://6624rn0y3tyl"]
 
 [ext_resource type="MeshLibrary" uid="uid://btegh8u6en8b0" path="res://MeshLibrary.tres" id="1_uq0t6"]
 [ext_resource type="PackedScene" uid="uid://b2org6ok0p0xb" path="res://scenes/prog_tools/player_start.tscn" id="2_kb833"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://caaidcaxd2nfe" path="res://scenes/prog_tools/pressure_plate.tscn" id="4_tib8s"]
 [ext_resource type="PackedScene" uid="uid://4ywa83djv3v7" path="res://scenes/prog_tools/door.tscn" id="5_m6opf"]
 [ext_resource type="PackedScene" uid="uid://di7qbbea0x658" path="res://scenes/prog_tools/next_level_volume.tscn" id="7_jfjuy"]
+[ext_resource type="PackedScene" uid="uid://0pyuh8ijs0lk" path="res://scenes/props/banner.tscn" id="8_fye52"]
 
 [node name="Level3" type="Node3D"]
 
@@ -23,46 +24,64 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2, 2,
 
 [node name="Door" parent="GridMap" node_paths=PackedStringArray("_pressure_plates") instance=ExtResource("5_m6opf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 4, -29)
-_pressure_plates = [NodePath("PressurePlate"), NodePath("PressurePlate2"), NodePath("PressurePlate3")]
+_pressure_plates = [NodePath("../PressurePlates/PressurePlate"), NodePath("../PressurePlates/PressurePlate2"), NodePath("../PressurePlates/PressurePlate3")]
 
 [node name="NextLevelVolume" parent="GridMap/Door" instance=ExtResource("7_jfjuy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 
-[node name="PressurePlate" parent="GridMap/Door" instance=ExtResource("4_tib8s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -2, 30)
+[node name="PressurePlates" type="Node3D" parent="GridMap"]
 
-[node name="PressurePlate2" parent="GridMap/Door" instance=ExtResource("4_tib8s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0227, -2, 23.9768)
+[node name="PressurePlate" parent="GridMap/PressurePlates" instance=ExtResource("4_tib8s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 2, 1)
 
-[node name="PressurePlate3" parent="GridMap/Door" instance=ExtResource("4_tib8s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.97579, 2.02828, 21.9804)
+[node name="PressurePlate2" parent="GridMap/PressurePlates" instance=ExtResource("4_tib8s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.0227, 2, -5.0232)
 
-[node name="FlameThrower" parent="GridMap" instance=ExtResource("2_su0fq")]
+[node name="PressurePlate3" parent="GridMap/PressurePlates" instance=ExtResource("4_tib8s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.97579, 6.02828, -7.0196)
+
+[node name="Traps" type="Node3D" parent="GridMap"]
+
+[node name="FlameThrower" parent="GridMap/Traps" instance=ExtResource("2_su0fq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.09661, 2, -5.95684)
 
-[node name="FlameThrower2" parent="GridMap" instance=ExtResource("2_su0fq")]
+[node name="FlameThrower2" parent="GridMap/Traps" instance=ExtResource("2_su0fq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.06192, 6, -13.473)
 
-[node name="FlameThrower3" parent="GridMap" instance=ExtResource("2_su0fq")]
+[node name="FlameThrower3" parent="GridMap/Traps" instance=ExtResource("2_su0fq")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.67164, 6, -7.0488)
 
-[node name="GroundSpikes" parent="GridMap" instance=ExtResource("3_enlvc")]
+[node name="GroundSpikes" parent="GridMap/Traps" instance=ExtResource("3_enlvc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.00255, 2, -10.9765)
 
-[node name="GroundSpikes2" parent="GridMap" instance=ExtResource("3_enlvc")]
+[node name="GroundSpikes2" parent="GridMap/Traps" instance=ExtResource("3_enlvc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00473, 2, -10.954)
 
-[node name="GroundSpikes3" parent="GridMap" instance=ExtResource("3_enlvc")]
+[node name="GroundSpikes3" parent="GridMap/Traps" instance=ExtResource("3_enlvc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98101, 2, -12.9941)
 
-[node name="GroundSpikes4" parent="GridMap" instance=ExtResource("3_enlvc")]
+[node name="GroundSpikes4" parent="GridMap/Traps" instance=ExtResource("3_enlvc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.00934, 2, -13.0506)
 
-[node name="GroundSpikes5" parent="GridMap" instance=ExtResource("3_enlvc")]
+[node name="GroundSpikes5" parent="GridMap/Traps" instance=ExtResource("3_enlvc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.02416, 2, -14.9842)
 
-[node name="GroundSpikes6" parent="GridMap" instance=ExtResource("3_enlvc")]
+[node name="GroundSpikes6" parent="GridMap/Traps" instance=ExtResource("3_enlvc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.01681, 2, -14.9881)
 
-[node name="GroundSpikes7" parent="GridMap" instance=ExtResource("3_enlvc")]
+[node name="GroundSpikes7" parent="GridMap/Traps" instance=ExtResource("3_enlvc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.981089, 1.99729, -14.9892)
+
+[node name="Props" type="Node3D" parent="GridMap"]
+
+[node name="BannerProp" parent="GridMap/Props" instance=ExtResource("8_fye52")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 7, -28)
+
+[node name="BannerProp2" parent="GridMap/Props" instance=ExtResource("8_fye52")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 7, -28)
+
+[node name="BannerProp3" parent="GridMap/Props" instance=ExtResource("8_fye52")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 9, -10)
+
+[node name="BannerProp4" parent="GridMap/Props" instance=ExtResource("8_fye52")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 7, -16)
