@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/autoloads/Global.gd" id="1_hkxrf"]
 [ext_resource type="Material" uid="uid://cu8so5orbasa6" path="res://graphics/materials/pixel_perfect_outline_mat.tres" id="2_7y8v6"]
 [ext_resource type="PackedScene" uid="uid://cm8rp67s8a3s5" path="res://scenes/autoloads/audio_manager.tscn" id="3_67t48"]
-[ext_resource type="AudioStream" uid="uid://b5f6js2hf7rej" path="res://audio/SwearKnight_Theme.wav" id="4_evi18"]
+[ext_resource type="AudioStream" uid="uid://d3jl7ln6o4gnd" path="res://audio/TheGoldenRule_Theme_v2_Mastered.wav" id="4_thy1g"]
 
 [node name="Global" type="Node" node_paths=PackedStringArray("Audio")]
 script = ExtResource("1_hkxrf")
@@ -14,5 +14,5 @@ _outline_mat = ExtResource("2_7y8v6")
 [node name="AudioManager" parent="." instance=ExtResource("3_67t48")]
 
 [node name="ThemeAudio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_evi18")
+stream = ExtResource("4_thy1g")
 volume_db = -12.0
